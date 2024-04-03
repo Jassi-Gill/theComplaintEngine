@@ -1,0 +1,31 @@
+{
+    "editor.fontSize": 18,
+    "editor.tabSize": 5,
+    "editor.defaultFormatter": null,
+    "[c]": {
+        "editor.defaultFormatter": "ms-vscode.cpptools"
+    },
+    "task.saveBeforeRun": "always",
+    "code-runner.saveAllFilesBeforeRun": false,
+    "code-runner.saveFileBeforeRun": true,
+    "files.associations": {
+        "stdio.h": "c",
+        "stdlib.h": "c",
+        "1410_bella_ciao": "c",
+        "cmath": "c",
+        "bfs": "c"
+    },
+    "cmake.configureOnOpen": true,
+    "cmake.sourceDirectory": "D:/VOLDER/PROJECTS/CODE/C/CLAN",
+    "java.debug.settings.onBuildFailureProceed": true,
+    "[python]": {
+        "editor.defaultFormatter": "ms-python.black-formatter",
+        "editor.tabSize": 4,
+        "editor.formatOnSave": true,
+        "python.formatting.blackArgs": ["--line-length", "88", "--target-version", ["py38"], "--exclude", "/path/to/excluded/folder"],
+        "editor.insertSpaces": true
+    },
+    "[html]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    }
+}
