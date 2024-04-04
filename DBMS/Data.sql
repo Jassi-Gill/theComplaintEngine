@@ -77,11 +77,11 @@ VALUES
 
 
 -- WorkersDepartment
-INSERT INTO WorkerDepartment (dId, dName, dLocation, dEmail, dHead)
-VALUES
-('CS', 'Computer Science', 'Building A', 'cs@example.com', 'Dr. Smith'),
-('EE', 'Electrical Engineering', 'Building B', 'ee@example.com', 'Prof. Johnson'),
-('ME', 'Mechanical Engineering', 'Building C', 'me@example.com', 'Dr. Brown');
+	INSERT INTO WorkerDepartment (dId, dName, dLocation, dEmail, dHead)
+	VALUES
+	('CS', 'Computer Science', 'Building A', 'cs@example.com', 'Dr. Smith'),
+	('EE', 'Electrical Engineering', 'Building B', 'ee@example.com', 'Prof. Johnson'),
+	('ME', 'Mechanical Engineering', 'Building C', 'me@example.com', 'Dr. Brown');
 
 
 -- Worker
@@ -221,16 +221,16 @@ INSERT INTO SupAdmMobileNo (adUserName, supAdMobileNo) VALUES
 
 -- Insert data into FiledComplaint table
 INSERT INTO FiledComplaint (tempComplainId, stuId, cDesc, dId) VALUES
-(1, 1, 'Issue with network connectivity', 'D001'),
-(2, 2, 'Problem with lab equipment', 'D002'),
-(3, 3, 'Complaint regarding research project', 'D003'),
-(4, 4, 'Marketing strategy complaint', 'D004'),
-(5, 5, 'Financial data discrepancy', 'D005'),
-(6, 6, 'HR policy concern', 'D006'),
-(7, 7, 'Operations workflow issue', 'D007'),
-(8, 8, 'Legal contract dispute', 'D008'),
-(9, 9, 'Sales performance complaint', 'D009'),
-(10, 10, 'Customer service feedback', 'D010');
+(1, 1, 'Issue with network connectivity', 'CS'),
+(2, 2, 'Problem with lab equipment', 'EE'),
+(3, 3, 'Complaint regarding research project', 'ME'),
+(4, 4, 'Marketing strategy complaint', 'ME'),
+(5, 5, 'Financial data discrepancy', 'EE'),
+(6, 6, 'HR policy concern', 'CS'),
+(7, 7, 'Operations workflow issue', 'ME'),
+(8, 8, 'Legal contract dispute', 'EE'),
+(9, 9, 'Sales performance complaint', 'CS'),
+(10, 10, 'Customer service feedback', 'CS');
 
 
 -- Insert data into Thread table
@@ -245,3 +245,34 @@ INSERT INTO Thread (cId, reply) VALUES
 (8, 'Legal consultation scheduled'),
 (9, 'Sales strategy discussion'),
 (10, 'Customer service training session scheduled');
+
+
+SELECT * FROM Student;
+
+SELECT * FROM StuMobile;
+
+SELECT * FROM WorkerDepartment;
+
+SELECT * FROM Worker;
+
+SELECT * FROM WorkerMobile;
+
+SELECT * FROM Faculty;
+
+SELECT * FROM FacMobile;
+
+SELECT * FROM OngoingWorks;
+
+SELECT * FROM OngoingWorksWorker;
+
+SELECT * FROM OngoingWorksStudent;
+
+SELECT * FROM OngoingWorksFaculty;
+
+SELECT * FROM SuperAdmin;
+
+SELECT * FROM SupAdmMobileNo;
+
+SELECT * FROM FiledComplaint;
+
+SELECT * FROM Thread;
