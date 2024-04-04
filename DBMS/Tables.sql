@@ -2,12 +2,12 @@ create table Student(
 stuId int PRIMARY KEY,
 stuName varchar(50),
 emailId varchar(80) UNIQUE,
-stuDepartment varchar(10),
+stuDepartment varchar(30),
 roomNo varchar(10));
 
 create table StuMobile(
 stuId int NOT NULL,
-stuMobileNo int PRIMARY KEY,
+stuMobileNo numeric(10,0) PRIMARY KEY,
 FOREIGN KEY (stuId) REFERENCES Student(stuId));
 
 create table WorkerDepartment(
@@ -26,12 +26,12 @@ workerDesig varchar(50));
 
 create table WorkerMobile(
 workerId varchar(20) NOT NULL,
-workerMobileNo int PRIMARY KEY,
+workerMobileNo numeric(10,0) PRIMARY KEY,
 FOREIGN KEY (workerId) REFERENCES Worker(workerId));
 
 create table Faculty(
 facId varchar(20) PRIMARY KEY,
-facName varchar(20),
+facName varchar(40),
 facEmail varchar(30),
 facDesig varchar(20),
 facPass varchar(20) NOT NULL UNIQUE
@@ -39,7 +39,7 @@ facPass varchar(20) NOT NULL UNIQUE
 
 create table FacMobile(
 facId varchar(20) ,
-facMobileNo int PRIMARY KEY,
+facMobileNo numeric(10,0) PRIMARY KEY,
 FOREIGN KEY (facId) REFERENCES faculty(facId)
 );
 
@@ -75,7 +75,7 @@ adLocation varchar(20));
 
 create table SupAdmMobileNo(
 adUserName varchar(30) NOT NULL,
-supAdMobileNo int PRIMARY KEY,
+supAdMobileNo numeric(10,0) PRIMARY KEY,
 FOREIGN KEY(adUserName) REFERENCES SuperAdmin(adUserName));
 
 create table FiledComplaint(
