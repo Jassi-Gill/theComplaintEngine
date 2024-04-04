@@ -175,6 +175,7 @@ VALUES
 (9, 'W009'),
 (10, 'W010');
 
+
 -- OngoingWorksStudent
 INSERT INTO OngoingWorksStudent (cId, stuId)
 VALUES
@@ -188,3 +189,59 @@ VALUES
 (8, 8),
 (9, 9),
 (10, 10);
+
+
+-- OngoingWorksFaculty
+INSERT INTO OngoingWorksFaculty (cId, facId) VALUES
+(1, 'F001'),
+(2, 'F002'),
+(3, 'F003'),
+(4, 'F004'),
+(5, 'F005'),
+(6, 'F006'),
+(7, 'F007'),
+(8, 'F008'),
+(9, 'F009'),
+(10, 'F010');
+
+
+-- Insert data into SuperAdmin table
+INSERT INTO SuperAdmin (adUserName, adPass, adName, adEmail, adLocation) VALUES
+('Admin1', 'Sg14s@3#S#AD', 'Jassi', 'admin1@example.com', 'R12'),
+('Admin2', 'JHsa521!rghA', 'Kunsh', 'admin2@example.com', 'R05'),
+('Admin3', 'J$KJ@r3AS3j1', 'Ankur', 'admin3@example.com', 'R33');
+
+
+-- Insert data into SupAdmMobileNo table
+INSERT INTO SupAdmMobileNo (adUserName, supAdMobileNo) VALUES
+('Admin1', 7889745452),
+('Admin2', 9345678901),
+('Admin3', 8456789012);
+
+
+-- Insert data into FiledComplaint table
+INSERT INTO FiledComplaint (tempComplainId, stuId, cDesc, dId) VALUES
+(1, 1, 'Issue with network connectivity', 'D001'),
+(2, 2, 'Problem with lab equipment', 'D002'),
+(3, 3, 'Complaint regarding research project', 'D003'),
+(4, 4, 'Marketing strategy complaint', 'D004'),
+(5, 5, 'Financial data discrepancy', 'D005'),
+(6, 6, 'HR policy concern', 'D006'),
+(7, 7, 'Operations workflow issue', 'D007'),
+(8, 8, 'Legal contract dispute', 'D008'),
+(9, 9, 'Sales performance complaint', 'D009'),
+(10, 10, 'Customer service feedback', 'D010');
+
+
+-- Insert data into Thread table
+INSERT INTO Thread (cId, reply) VALUES
+(1, 'Investigating the network issue'),
+(2, 'Technician assigned to fix lab equipment'),
+(3, 'Research project review scheduled'),
+(4, 'Marketing team meeting scheduled'),
+(5, 'Financial analysis in progress'),
+(6, 'HR policy under review'),
+(7, 'Operations process optimization underway'),
+(8, 'Legal consultation scheduled'),
+(9, 'Sales strategy discussion'),
+(10, 'Customer service training session scheduled');
