@@ -4,12 +4,12 @@ mydb = mc.connect(
     host="localhost",
     user="root",
     password="JaswindaR@2105",
-    database="jassi",
+    database="theComplainEngine",
 )
 
 cursor = mydb.cursor()
 
-cursor.execute("SELECT * FROM advisor")
+cursor.execute("SELECT * FROM Student")
 
 rows = cursor.fetchall()
 

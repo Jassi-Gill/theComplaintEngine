@@ -1,7 +1,7 @@
 create table Student(
 stuId int PRIMARY KEY,
 stuName varchar(50),
-emailId varchar(80),
+emailId varchar(80) UNIQUE,
 stuDepartment varchar(10),
 roomNo varchar(10));
 
