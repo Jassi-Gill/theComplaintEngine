@@ -3,6 +3,8 @@ stuId int PRIMARY KEY,
 stuName varchar(50),
 emailId varchar(80) UNIQUE,
 stuDepartment varchar(30),
+stuPass varchar(30),
+gender varchar(20),
 roomNo varchar(10));
 
 create table StuMobile(

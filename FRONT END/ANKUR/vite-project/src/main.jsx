@@ -9,6 +9,6 @@ import './login page/index18.css'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <App19/>
+    <App18/>
   </React.StrictMode>,
 )
