@@ -1,38 +1,36 @@
 -- Student Table
-INSERT INTO Student (stuId, stuName, emailId, stuDepartment, stuPass, gender, roomNo) 
+INSERT INTO Student (stuId, stuName, emailId, stuDepartment, stuPass, stuGender, stuBatch, roomNo) 
 VALUES 
-(1, 'John Doe', 'john@example.com', 'Computer Science', 'password1', 'Male', 'C101'),
-(2, 'Jane Smith', 'jane@example.com', 'Electrical Engineering', 'password2', 'Female', 'E201'),
-(3, 'Alice Johnson', 'alice@example.com', 'Mechanical Engineering', 'password3', 'Male', 'M301'),
-(4, 'Bob Brown', 'bob@example.com', 'Computer Science', 'password1', 'Male', 'C102'),
-(5, 'Emily Davis', 'emily@example.com', 'Electrical Engineering', 'password2', 'Female', 'E202'),
-(6, 'Michael Wilson', 'michael@example.com', 'Mechanical Engineering', 'password3', 'Male', 'M302'),
-(7, 'David Jones', 'david@example.com', 'Computer Science', 'password1', 'Male', 'C103'),
-(8, 'Sarah Miller', 'sarah@example.com', 'Electrical Engineering', 'password2', 'Female', 'E203'),
-(9, 'Emma Wilson', 'emma@example.com', 'Mechanical Engineering', 'password3', 'Male', 'M303'),
-(10, 'Ryan Taylor', 'ryan@example.com', 'Computer Science', 'password1', 'Male', 'C104'), 
-(11, 'Daniel Harris', 'daniel@example.com', 'Computer Science', 'password1', 'Male', 'C105'),
-(12, 'Sophia Anderson', 'sophia@example.com', 'Electrical Engineering', 'password2', 'Female', 'E204'),
-(13, 'William Martinez', 'william@example.com', 'Mechanical Engineering', 'password3', 'Male', 'M304'),
-(14, 'Olivia Wilson', 'olivia@example.com', 'Computer Science', 'password1', 'Male', 'C106'),
-(15, 'James Taylor', 'james@example.com', 'Electrical Engineering', 'password2', 'Female', 'E205'),
-(16, 'Ethan Moore', 'ethan@example.com', 'Mechanical Engineering', 'password3', 'Male', 'M305'),
-(17, 'Ava Garcia', 'ava@example.com', 'Computer Science', 'password1', 'Male', 'C107'),
-(18, 'Mia Lopez', 'mia@example.com', 'Electrical Engineering', 'password2', 'Female', 'E206'),
-(19, 'Alexander Lee', 'alexander@example.com', 'Mechanical Engineering', 'password3', 'Male', 'M306'),
-(20, 'Charlotte Clark', 'charlotte@example.com', 'Computer Science', 'password1', 'Male', 'C108'),
-(21, 'Noah Rodriguez', 'noah@example.com', 'Electrical Engineering', 'password2', 'Female', 'E207'),
-(22, 'Isabella Hernandez', 'isabella@example.com', 'Mechanical Engineering', 'password3', 'Male', 'M307'),
-(23, 'Sophia Nguyen', 'sophia2@example.com', 'Computer Science', 'password1', 'Male', 'C109'),
-(24, 'Benjamin King', 'benjamin@example.com', 'Electrical Engineering', 'password2', 'Female', 'E208'),
-(25, 'Samuel Hill', 'samuel@example.com', 'Mechanical Engineering', 'password3', 'Male', 'M308'),
-(26, 'Elizabeth Green', 'elizabeth@example.com', 'Computer Science', 'password1', 'Male', 'C110'),
-(27, 'Alexander Scott', 'alexander2@example.com', 'Electrical Engineering', 'password2', 'Female', 'E209'),
-(28, 'Madison Adams', 'madison@example.com', 'Mechanical Engineering', 'password3', 'Male', 'M309'),
-(29, 'Michael Baker', 'michael2@example.com', 'Computer Science', 'password1', 'Male', 'C111'),
-(30, 'Sofia Carter', 'sofia@example.com', 'Electrical Engineering', 'password2', 'Female', 'E210');
-
-
+(1, 'John Doe', 'john@example.com', 'Computer Science', 'password1', 'Male', 'Batch 1', 'C101'),
+(2, 'Jane Smith', 'jane@example.com', 'Electrical Engineering', 'password2', 'Female', 'Batch 1', 'E201'),
+(3, 'Alice Johnson', 'alice@example.com', 'Mechanical Engineering', 'password3', 'Male', 'Batch 1', 'M301'),
+(4, 'Bob Brown', 'bob@example.com', 'Computer Science', 'password4', 'Male', 'Batch 1', 'C102'),
+(5, 'Emily Davis', 'emily@example.com', 'Electrical Engineering', 'password5', 'Female', 'Batch 1', 'E202'),
+(6, 'Michael Wilson', 'michael@example.com', 'Mechanical Engineering', 'password6', 'Male', 'Batch 1', 'M302'),
+(7, 'David Jones', 'david@example.com', 'Computer Science', 'password7', 'Male', 'Batch 1', 'C103'),
+(8, 'Sarah Miller', 'sarah@example.com', 'Electrical Engineering', 'password8', 'Female', 'Batch 1', 'E203'),
+(9, 'Emma Wilson', 'emma@example.com', 'Mechanical Engineering', 'password9', 'Male', 'Batch 1', 'M303'),
+(10, 'Ryan Taylor', 'ryan@example.com', 'Computer Science', 'password10', 'Male', 'Batch 1', 'C104'), 
+(11, 'Daniel Harris', 'daniel@example.com', 'Computer Science', 'password11', 'Male', 'Batch 2', 'C105'),
+(12, 'Sophia Anderson', 'sophia@example.com', 'Electrical Engineering', 'password12', 'Female', 'Batch 2', 'E204'),
+(13, 'William Martinez', 'william@example.com', 'Mechanical Engineering', 'password13', 'Male', 'Batch 2', 'M304'),
+(14, 'Olivia Wilson', 'olivia@example.com', 'Computer Science', 'password14', 'Male', 'Batch 2', 'C106'),
+(15, 'James Taylor', 'james@example.com', 'Electrical Engineering', 'password15', 'Female', 'Batch 2', 'E205'),
+(16, 'Ethan Moore', 'ethan@example.com', 'Mechanical Engineering', 'password16', 'Male', 'Batch 2', 'M305'),
+(17, 'Ava Garcia', 'ava@example.com', 'Computer Science', 'password17', 'Male', 'Batch 2', 'C107'),
+(18, 'Mia Lopez', 'mia@example.com', 'Electrical Engineering', 'password18', 'Female', 'Batch 2', 'E206'),
+(19, 'Alexander Lee', 'alexander@example.com', 'Mechanical Engineering', 'password19', 'Male', 'Batch 2', 'M306'),
+(20, 'Charlotte Clark', 'charlotte@example.com', 'Computer Science', 'password20', 'Male', 'Batch 2', 'C108'),
+(21, 'Noah Rodriguez', 'noah@example.com', 'Electrical Engineering', 'password21', 'Female', 'Batch 3', 'E207'),
+(22, 'Isabella Hernandez', 'isabella@example.com', 'Mechanical Engineering', 'password22', 'Male', 'Batch 3', 'M307'),
+(23, 'Sophia Nguyen', 'sophia2@example.com', 'Computer Science', 'password23', 'Male', 'Batch 3', 'C109'),
+(24, 'Benjamin King', 'benjamin@example.com', 'Electrical Engineering', 'password24', 'Female', 'Batch 3', 'E208'),
+(25, 'Samuel Hill', 'samuel@example.com', 'Mechanical Engineering', 'password25', 'Male', 'Batch 3', 'M308'),
+(26, 'Elizabeth Green', 'elizabeth@example.com', 'Computer Science', 'password26', 'Male', 'Batch 3', 'C110'),
+(27, 'Alexander Scott', 'alexander2@example.com', 'Electrical Engineering', 'password27', 'Female', 'Batch 3', 'E209'),
+(28, 'Madison Adams', 'madison@example.com', 'Mechanical Engineering', 'password28', 'Male', 'Batch 3', 'M309'),
+(29, 'Michael Baker', 'michael2@example.com', 'Computer Science', 'password29', 'Male', 'Batch 3', 'C111'),
+(30, 'Sofia Carter', 'sofia@example.com', 'Electrical Engineering', 'password30', 'Female', 'Batch 3', 'E210');
 
 
 -- StuMobile
@@ -74,7 +72,6 @@ VALUES
 (28, 7745612199),
 (29, 8454654560),
 (30, 9999000011);
-
 
 
 -- WorkersDepartment
