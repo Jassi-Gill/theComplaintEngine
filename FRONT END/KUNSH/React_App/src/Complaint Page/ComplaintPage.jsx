@@ -167,7 +167,8 @@ function ComplaintPage() {
 
                     <input type="text" name="brief-desc" placeholder="Enter a brief description" />
                     <input type="text" value={inputPhotoLink} onChange={handleInputChange} placeholder="Upload photo link" />
-                    <button type="button" onClick={handleButtonClick}>Upload⤴️</button>
+                    <button type="button" onClick={handleButtonClick}>Upload Photo⤴️</button>
+                    <input type="submit" value="Submit"></input>
                 </div>
             </form>
         </>
