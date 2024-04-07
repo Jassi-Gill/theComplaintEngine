@@ -1,69 +1,88 @@
 .background-template {
-    background-size: cover;
-    background-position: center;
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
+  background-color: white;
+  background-size: cover;
+  background-position: center;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
 .admin-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-  }
-  
-  .user-type-dropdown {
-    margin-bottom: 20px;
-  }
-  
-  .user-type-dropdown select {
-    padding: 10px;
-    font-size: 16px;
-  }
-  
-  .fac-login {
-    padding: 20px;
-    border: 0px solid black;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    width: 300px;
-  }
-  
-  .fac-login h1 {
-    color: black;
-    margin-bottom: 20px;
-  }
-  
-  .inputs {
-    margin-bottom: 20px;
-  }
-  
-  .inputs label {
-    display: block;
-    margin-bottom: 5px;
-  }
-  
-  .inputs input {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-  }
-  
-  button {
-    padding: 10px 20px;
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
-  button:hover {
-    background-color: #0056b3;
-  }
-  
+  display: flex;
+}
+
+.photo-section {
+  flex: 1;
+}
+
+.background-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.login-section {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.fac-login {
+  background-color: white;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 300px;
+}
+
+.user-type-dropdown {
+  margin-bottom: 10px;
+}
+
+.user-type-dropdown select {
+  text-align: center;
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.fac-login h1 {
+  color: black;
+  margin-bottom: 20px;
+}
+
+.inputs {
+  margin-bottom: 20px;
+}
+
+.inputs label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.inputs input {
+  width: calc(100% - 20px);
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+button {
+  width: 100%;
+  padding: 10px 0;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
