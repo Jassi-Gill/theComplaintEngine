@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 
+
 function Admin() {
   const [AdId, setAdId] = useState("");
   const [pass, setPass] = useState("");
@@ -8,13 +9,7 @@ function Admin() {
 
   useEffect(() => {
     const images = [
-      "bh.jpg",
-      "loginbackground.jpg",
-      "1.jpg",
-      "2.jpg",
-      "3.jpg",
-      
-      
+      "compeng.jpg",
       // Add more image URLs as needed
     ];
     const randomIndex = Math.floor(Math.random() * images.length);
@@ -39,42 +34,33 @@ function Admin() {
   }
 
   return (
-    <div
-      className="background-template"
-      style={{ backgroundImage: `url(${backgroundImage})` }}
-    >
+    <div className="background-template">
       <div className="admin-container">
-        <div className="user-type-dropdown">
-          <select value={selectedUserType} onChange={handleUserTypeChange}>
-            <option value="Student">Student</option>
-            <option value="Faculty">Faculty</option>
-            <option value="Admin">Admin</option>
-            <option value="Worker">Worker</option>
-          </select>
+        <div className="photo-section">
+          {/* Photo goes here */}
+          <img src="comp2.jpg" alt="Engineering" className="background-photo" />
         </div>
-
-        <div className="fac-login">
-          <h1>LOGIN</h1>
-          <div className="inputs">
-            <label htmlFor="username">USERNAME:</label>
-            <input
-              type="text"
-              value={AdId}
-              onChange={handleIdChange}
-              placeholder="Enter Id"
-              id="username"
-            />
-            <br />
-            <label htmlFor="password">PASSWORD:</label>
-            <input
-              type="password"
-              value={pass}
-              onChange={handlePassChange}
-              placeholder="••••••••"
-              id="password"
-            />
+        <div className="login-section">
+          {/* Login box goes here */}
+          <div className="fac-login">
+            <div className="user-type-dropdown">
+              <select value={selectedUserType} onChange={handleUserTypeChange}>
+                <option value="Student">Student</option>
+                <option value="Faculty">Faculty</option>
+                <option value="Admin">Admin</option>
+                <option value="Worker">Worker</option>
+              </select>
+            </div>
+            <h1>LOGIN</h1>
+            <div className="inputs">
+              <label htmlFor="username">USERNAME:</label>
+              <input type="text" value={AdId} onChange={handleIdChange} placeholder="Enter Id" id="username" />
+              <br />
+              <label htmlFor="password">PASSWORD:</label>
+              <input type="password" value={pass} onChange={handlePassChange} placeholder="••••••••" id="password" />
+            </div>
+            <button onClick={handleLogin}>LOGIN</button>
           </div>
-          <button onClick={handleLogin}>LOGIN</button>
         </div>
       </div>
     </div>
