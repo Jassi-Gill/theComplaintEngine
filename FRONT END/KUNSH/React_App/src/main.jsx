@@ -7,12 +7,14 @@ import ReactDOM from 'react-dom/client'
 // import App19 from './home page/App19'
 // import './home page/index19.css'
 
-import App20 from './Complaint Page/App20'
-import './Complaint Page/index20.css'
+// import App20 from './Complaint Page/App20'
+// import './Complaint Page/index20.css'
+
+import App21 from './Thread Page'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     {/* <App /> */}
-    <App20 />
+    <App21 />
   </React.StrictMode>,
 )
