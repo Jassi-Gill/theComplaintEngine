@@ -1,70 +1,114 @@
 import React, { useState, useEffect } from "react";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faHouse } from '@fortawesome/free-solid-svg-icons';
+import { faUser } from '@fortawesome/free-solid-svg-icons';
+import { CSSTransition } from 'react-transition-group';
 
+function HomePage() {
+    let ThreadName = "Fan Not working";
 
-function Admin() {
-  const [AdId, setAdId] = useState("");
-  const [pass, setPass] = useState("");
-  const [selectedUserType, setSelectedUserType] = useState("Student");
-  const [backgroundImage, setBackgroundImage] = useState("");
+    // Example statistics data
+    const statistics = {
+        totalWorkers: 150,
+        totalStudents: 500,
+        totalFaculties: 50
+    };
 
-  useEffect(() => {
-    const images = [
-      "compeng.jpg",
-      // Add more image URLs as needed
-    ];
-    const randomIndex = Math.floor(Math.random() * images.length);
-    setBackgroundImage(images[randomIndex]);
-  }, []);
+    const [isLoggedIn, setIsLoggedIn] = useState(false);
 
-  function handleIdChange(event) {
-    setAdId(event.target.value);
-  }
+    useEffect(() => {
+        // Check if user is logged in (this can be done based on your authentication logic)
+        // For demonstration purposes, let's set it to true initially
+        setIsLoggedIn(true);
+    }, []);
 
-  function handlePassChange(event) {
-    let len = event.target.value.length;
-    setPass("•".repeat(len));
-  }
+    function handleLogin() {
+        // Handle login logic
+        setIsLoggedIn(true);
+    }
 
-  function handleUserTypeChange(event) {
-    setSelectedUserType(event.target.value);
-  }
+    function handleLogout() {
+        // Handle logout logic
+        setIsLoggedIn(false);
+    }
 
-  function handleLogin() {
-    // handle login based on selectedUserType
-  }
+    function handleClick1() {
+        // Handle click for home button
+    }
 
-  return (
-    <div className="background-template">
-      <div className="admin-container">
-        <div className="photo-section">
-          {/* Photo goes here */}
-          <img src="comp2.jpg" alt="Engineering" className="background-photo" />
-        </div>
-        <div className="login-section">
-          {/* Login box goes here */}
-          <div className="fac-login">
-            <div className="user-type-dropdown">
-              <select value={selectedUserType} onChange={handleUserTypeChange}>
-                <option value="Student">Student</option>
-                <option value="Faculty">Faculty</option>
-                <option value="Admin">Admin</option>
-                <option value="Worker">Worker</option>
-              </select>
+    const [showPanel, setShowPanel] = useState(false);
+
+    useEffect(() => {
+        setShowPanel(true);
+    }, []);
+
+    return (
+        <>
+            <header>
+                <div className="Navbar">
+                    <button onClick={handleClick1} id="home" className="icons">
+                        <FontAwesomeIcon icon={faHouse} />
+                    </button>
+                    <div className="search-container">
+                        <input type="text" placeholder="Search for Topics" id="search-box" />
+                        <button className="search-button">Search</button>
+                    </div>
+                    {isLoggedIn ? (
+                        <>
+                            <button onClick={handleLogout} className="icons">Logout</button>
+                            <button onClick={handleClick} id="profile" className="icons">
+                                <FontAwesomeIcon icon={faUser} />
+                            </button>
+                        </>
+                    ) : (
+                        <button onClick={handleLogin} className="icons">Login</button>
+                    )}
+                </div>
+            </header>
+            <div className="container">
+                <CSSTransition in={showPanel} timeout={500} classNames="panel">
+                    <div className="left">
+                        <div className="panel">
+                            <h2>Statistics</h2>
+                            <div className="statistic">
+                                <h3>Total Workers:</h3>
+                                <p>{statistics.totalWorkers}</p>
+                            </div>
+                            <div className="statistic">
+                                <h3>Total Students:</h3>
+                                <p>{statistics.totalStudents}</p>
+                            </div>
+                            <div className="statistic">
+                                <h3>Total Faculties:</h3>
+                                <p>{statistics.totalFaculties}</p>
+                            </div>
+                        </div>
+                    </div>
+                </CSSTransition>
+                <div className="parent Joined-Threads">
+                    <h2>Joined Threads</h2>
+                    <div className="Thread">
+                        <h3>Complaint Creator</h3>
+                        <h4>{ThreadName}</h4>
+                        <p>Thread Start Date</p>
+                        <h6>Thread Type / Complaint Type</h6>
+                    </div>
+                </div>
+                <div className="parent recent-threads">
+                    <h2>Recent Threads</h2>
+                    <div className="Recent-Thread">
+                        <h2>Thread Name</h2>
+                        <p>Latest Comment</p>
+                        <p>Latest Comment date</p>
+                    </div>
+                </div>
             </div>
-            <h1>LOGIN</h1>
-            <div className="inputs">
-              <label htmlFor="username">USERNAME:</label>
-              <input type="text" value={AdId} onChange={handleIdChange} placeholder="Enter Id" id="username" />
-              <br />
-              <label htmlFor="password">PASSWORD:</label>
-              <input type="password" value={pass} onChange={handlePassChange} placeholder="••••••••" id="password" />
-            </div>
-            <button onClick={handleLogin}>LOGIN</button>
-          </div>
-        </div>
-      </div>
-    </div>
-  );
+            <footer style={{backgroundColor: "#333"}}>
+                <div>About Us</div>
+                <div>Admin Contact</div>
+            </footer>
+        </>
+    )
 }
 
-export default Admin;
+export default HomePage;

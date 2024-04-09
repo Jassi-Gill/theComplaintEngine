@@ -4,7 +4,6 @@ import { faHouse } from '@fortawesome/free-solid-svg-icons';
 import { faUser } from '@fortawesome/free-solid-svg-icons';
 import { CSSTransition } from 'react-transition-group';
 
-
 function HomePage() {
     let ThreadName = "Fan Not working";
 
@@ -31,18 +30,20 @@ function HomePage() {
 
     return (
         <>
-            <div className="Navbar">
-                <button onClick={handleClick1} id="home" className="icons">
-                    <FontAwesomeIcon icon={faHouse} />
-                </button>
-                <div className="search-container">
-                    <input type="text" placeholder="Search for Topics" id="search-box" />
-                    <button className="search-button">Search</button>
+            <header>
+                <div className="Navbar">
+                    <button onClick={handleClick1} id="home" className="icons">
+                        <FontAwesomeIcon icon={faHouse} />
+                    </button>
+                    <div className="search-container">
+                        <input type="text" placeholder="Search for Topics" id="search-box" />
+                        <button className="search-button">Search</button>
+                    </div>
+                    <button onClick={handleClick} id="profile" className="icons">
+                        <FontAwesomeIcon icon={faUser} />
+                    </button>
                 </div>
-                <button onClick={handleClick} id="profile" className="icons">
-                    <FontAwesomeIcon icon={faUser} />
-                </button>
-            </div>
+            </header>
             <div className="container">
                 <CSSTransition in={showPanel} timeout={500} classNames="panel">
                     <div className="left">
@@ -81,7 +82,12 @@ function HomePage() {
                     </div>
                 </div>
             </div>
+            <footer>
+                <div>About Us</div>
+                <div>Admin Contact</div>
+            </footer>
         </>
     )
 }
+
 export default HomePage;
