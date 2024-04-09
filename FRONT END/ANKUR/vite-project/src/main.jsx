@@ -12,6 +12,6 @@ import './Complaint Page/index20.css'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <App19/>
+    <App17/>
   </React.StrictMode>,
 )
