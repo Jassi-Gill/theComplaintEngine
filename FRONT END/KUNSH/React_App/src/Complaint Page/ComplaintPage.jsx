@@ -113,23 +113,28 @@ function ComplaintPage() {
             <form>
                 <div className="Form">
                     <input type="text" name="Name" placeholder="Enter FULL NAME" /><br />
-                    <input type="number" name="RollNo." placeholder="Enter Roll no." /><br />
                     <input type="text" name="Email" placeholder="Enter College e-mail Id" /><br />
-                    <select name="batch">
-                        <option value="2025">2025</option>
-                        <option value="2026">2026</option>
-                        <option value="2027">2027</option>
-                        <option value="2028">2028</option>
-                    </select><br />
-                    <input type="number" name="room no." placeholder="Enter room no." /><br />
-                    <select name="Area">
-                        <option value="Boys' Hostel">Boys' Hostel</option>
-                        <option value="Girls' Hostel">Girls' Hostel</option>
-                        <option value="Faculty Residence (T1/T2)">Faculty Residence (T1/T2)</option>
-                        <option value="Admin Building">Admin Building</option>
-                        <option value="Academic Building">Academic Building</option>
-                        <option value="Security Barrack">Security Barrack</option>
-                    </select><br />
+                    <div className="small_box">
+                        <input type="number" name="RollNo." placeholder="Enter Roll no." /><br />
+                        <select name="batch">
+                            <option value="2025">2025</option>
+                            <option value="2026">2026</option>
+                            <option value="2027">2027</option>
+                            <option value="2028">2028</option>
+                        </select><br />
+                    </div>
+
+                    <div className="small_box">
+                        <input type="number" name="room no." placeholder="Enter room no." /><br />
+                        <select name="Area">
+                            <option value="Boys' Hostel">Boys' Hostel</option>
+                            <option value="Girls' Hostel">Girls' Hostel</option>
+                            <option value="Faculty Residence (T1/T2)">Faculty Residence (T1/T2)</option>
+                            <option value="Admin Building">Admin Building</option>
+                            <option value="Academic Building">Academic Building</option>
+                            <option value="Security Barrack">Security Barrack</option>
+                        </select><br />
+                    </div>
                     <select name="complaintType" onChange={handleComplaintTypeChange}>
                         <option value="">Select</option>
                         <option value="Electrical">Electrical</option>
@@ -165,10 +170,10 @@ function ComplaintPage() {
                     )}
 
 
-                    <input type="text" name="brief-desc" placeholder="Enter a brief description" />
+                    <input type="text" name="brief-desc" placeholder="Enter a brief description" id="breif-desc" />
                     <input type="text" value={inputPhotoLink} onChange={handleInputChange} placeholder="Upload photo link" />
-                    <button type="button" onClick={handleButtonClick}>Upload Photo⤴️</button>
-                    <input type="submit" value="Submit"></input>
+                    <button type="button" onClick={handleButtonClick}>Upload⤴️</button>
+                    <input type="submit" />
                 </div>
             </form>
         </>

@@ -10,7 +10,8 @@ import ReactDOM from 'react-dom/client'
 // import App20 from './Complaint Page/App20'
 // import './Complaint Page/index20.css'
 
-import App21 from './Thread Page/Thread_page'
+
+import App21 from './Thread Page/App21'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
