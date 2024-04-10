@@ -14,6 +14,13 @@ function HomePage() {
         totalFaculties: 50
     };
 
+    const complaintTypes = [
+        { name: "Electrical", link: "https://example.com/electrical" },
+        { name: "Plumbing", link: "https://example.com/plumbing" },
+        { name: "Mess", link: "https://example.com/mess" }
+        // Add more complaint types as needed
+    ];
+
     function handleClick() {
         // Handle click for profile button
     }
@@ -30,8 +37,8 @@ function HomePage() {
 
     return (
         <>
-            <header>
-                <div className="Navbar">
+            <header className="Navbar">
+                <div>
                     <button onClick={handleClick1} id="home" className="icons">
                         <FontAwesomeIcon icon={faHouse} />
                     </button>
@@ -39,29 +46,55 @@ function HomePage() {
                         <input type="text" placeholder="Search for Topics" id="search-box" />
                         <button className="search-button">Search</button>
                     </div>
+                </div>
+                <div>
                     <button onClick={handleClick} id="profile" className="icons">
                         <FontAwesomeIcon icon={faUser} />
                     </button>
                 </div>
             </header>
             <div className="container">
-                <CSSTransition in={showPanel} timeout={500} classNames="panel">
-                    <div className="left">
-                        <div className="panel">
-                            <h2>Statistics</h2>
+                <div id="side-panel" className="panel-container">
+                    <div className="panel-content">
+                        <h2>Browse Complaints by Types</h2>
+                        <div className="complaints">
+                            <h3>Complaint Types</h3>
+                            <ul>
+                                {complaintTypes.map((complaint, index) => (
+                                    <li key={index}>
+                                        <a href={complaint.link}>{complaint.name}</a>
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
+                        <div className="statistics">
+                            <h3>Statistics</h3>
                             <div className="statistic">
-                                <h3>Total Workers:</h3>
+                                <h4>Total Workers:</h4>
                                 <p>{statistics.totalWorkers}</p>
                             </div>
                             <div className="statistic">
-                                <h3>Total Students:</h3>
+                                <h4>Total Students:</h4>
                                 <p>{statistics.totalStudents}</p>
                             </div>
                             <div className="statistic">
-                                <h3>Total Faculties:</h3>
+                                <h4>Total Faculties:</h4>
+                                <p>{statistics.totalFaculties}</p>
+                            </div>
+                            <div className="statistic">
+                                <h4>Total Faculties:</h4>
+                                <p>{statistics.totalFaculties}</p>
+                            </div>
+                            <div className="statistic">
+                                <h4>Total Faculties:</h4>
                                 <p>{statistics.totalFaculties}</p>
                             </div>
                         </div>
+                    </div>
+                </div>
+                <CSSTransition in={showPanel} timeout={500} classNames="panel">
+                    <div className="panel">
+                        {/* Content in the main container */}
                     </div>
                 </CSSTransition>
                 <div className="parent Joined-Threads">
@@ -82,7 +115,7 @@ function HomePage() {
                     </div>
                 </div>
             </div>
-            <footer>
+            <footer className="footer">
                 <div>About Us</div>
                 <div>Admin Contact</div>
             </footer>
