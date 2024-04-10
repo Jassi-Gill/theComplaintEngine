@@ -38,13 +38,13 @@ function SignUpPage() {
             <h1>SIGN UP</h1>
             <form onSubmit={handleSubmit}>
               <div className="inputs">
-                <label htmlFor="username">USERNAME:</label>
+                <label htmlFor="username"></label>
                 <input type="text" value={username} onChange={handleUsernameChange} placeholder="Enter username" id="username" />
                 <br />
-                <label htmlFor="password">PASSWORD:</label>
+                <label htmlFor="password"></label>
                 <input type="password" value={password} onChange={handlePasswordChange} placeholder="Enter password" id="password" />
                 <br />
-                <label htmlFor="confirmPassword">CONFIRM PASSWORD:</label>
+                <label htmlFor="confirmPassword"></label>
                 <input type="password" value={confirmPassword} onChange={handleConfirmPasswordChange} placeholder="Confirm password" id="confirmPassword" />
               </div>
               <button type="submit">SIGN UP</button>
