@@ -1,0 +1,105 @@
+/* Style for Navbar */
+.Navbar {
+    background-color: #333;
+    color: white;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .icons {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 20px;
+    color: white;
+  }
+  
+  .icons:hover {
+    color: lightgray;
+  }
+  
+  #search-box {
+    padding: 5px;
+    border-radius: 5px;
+    margin-right: 10px;
+  }
+  
+  /* Style for Tables */
+  h1 {
+    margin-top: 20px;
+  }
+  
+  button {
+    margin: 10px;
+    padding: 5px 10px;
+    border: none;
+    background-color: #007bff;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  
+  th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+  }
+  
+  th {
+    background-color: #f2f2f2;
+    color: #333;
+  }
+  
+  th:first-child, td:first-child {
+    border-left: none;
+  }
+  
+  th:last-child, td:last-child {
+    border-right: none;
+  }
+  /* CSS for hover effect and buttons */
+.action-buttons {
+    position: relative;
+  }
+  
+  .edit-button,
+  .delete-button {
+    display: none;
+    position: absolute;
+    right: 0;
+  }
+  
+  tr:hover .edit-button,
+  tr:hover .delete-button {
+    display: inline-block;
+  }
+  
+  /* Adjust button styles */
+  .edit-button,
+  .delete-button {
+    /* padding: 5px 10px;
+    margin-left: 5px; */
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+  }
+  
+  .edit-button:hover,
+  .delete-button:hover {
+    background-color: #0056b3;
+  }
+  

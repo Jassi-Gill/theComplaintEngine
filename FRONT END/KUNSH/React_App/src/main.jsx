@@ -10,11 +10,19 @@ import ReactDOM from 'react-dom/client'
 // import App20 from './Complaint Page/App20'
 // import './Complaint Page/index20.css'
 
-import App21 from './Thread Page/App21'
+// import App21 from './Thread Page/App21'
+
+//import App22 from './profile page/App22'
+
+import App23 from './Data Page for Admin/App23'
+import './Data Page for Admin/index23.css'
+
+//import App24 from './Edit profile page/App24'
+
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     {/* <App /> */}
-    <App21 />
+    <App23 />
   </React.StrictMode>,
 )
