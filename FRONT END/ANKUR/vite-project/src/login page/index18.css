@@ -14,6 +14,7 @@
 
 .photo-section {
   flex: 1;
+  animation: fadeIn 1s ease-in-out;
 }
 
 .background-photo {
@@ -22,11 +23,23 @@
   object-fit: cover;
 }
 
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 .login-section {
   flex: 1;
   display: flex;
   justify-content: center;
   align-items: center;
+  animation: fadeIn 1s ease-in-out;
 }
 
 .fac-login {
