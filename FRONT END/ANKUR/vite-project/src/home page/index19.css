@@ -12,6 +12,7 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 10px 20px;
+    z-index: 1000; /* Ensures the navbar stays on top of other content */
 }
 
 .icons {
@@ -47,45 +48,63 @@ body {
 
 .container {
     display: flex;
-    justify-content: space-around;
-    align-items: flex-start;
+    padding-top: 60px; /* Adjust this padding to make space for the navbar */
+}
+
+.panel-container {
+    flex: 0 0 250px; /* Set the width of the panel */
+    overflow-y: auto; /* Enable scrolling for the panel */
+    background-color: #555; /* Change the color of the panel */
+    color: white;
     padding: 20px;
 }
 
-.left {
-    flex: 1;
-}
-
-.panel {
-    background-color: white;
+.panel-content {
+    padding: 20px;
+    background-color: #666;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    transition: transform 0.5s ease-in-out;
+    margin-bottom: 20px;
+    overflow-y: auto; /* Add scrollbar for vertical overflow */
 }
 
-.panel-enter {
-    opacity: 0;
-    transform: translateY(-20px);
+.complaints ul {
+    list-style: none;
+    padding: 0;
 }
 
-.panel-enter-active {
-    opacity: 1;
-    transform: translateY(0);
-    transition: opacity 500ms, transform 500ms;
+.complaints a {
+    display: block;
+    color: white;
+    text-decoration: none;
+    padding: 5px 0;
+    transition: background-color 0.3s ease;
 }
 
-.panel-exit {
-    opacity: 1;
-    transform: translateY(0);
+.complaints a:hover {
+    background-color: #444;
 }
 
-.panel-exit-active {
-    opacity: 0;
-    transform: translateY(-20px);
-    transition: opacity 500ms, transform 500ms;
+.statistics {
+    margin-top: 20px;
 }
 
+.statistics h3 {
+    margin-bottom: 10px;
+}
+
+.statistics .statistic {
+    margin-bottom: 10px;
+}
+
+.footer {
+    background-color: #333;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+}
+
+/* Preserve the styling for Joined Threads and Recent Threads */
 .parent {
     flex: 1;
     margin-left: 20px;
@@ -113,4 +132,3 @@ body {
 .Thread h4, .Thread p, .Thread h6, .Recent-Thread p {
     color: #666;
 }
-
