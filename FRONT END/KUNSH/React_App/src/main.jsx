@@ -15,7 +15,7 @@ import './Complaint Page/index20.css'
 //import App22 from './profile page/App22'
 
 import App23 from './Data Page for Admin/App23'
-import './Data Page for Admin/index23.css'
+// import './Data Page for Admin/index23.css'
 
 //import App24 from './Edit profile page/App24'
 
@@ -23,6 +23,6 @@ import './Data Page for Admin/index23.css'
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     {/* <App /> */}
-    <App23 />
+    <App20 />
   </React.StrictMode>,
 )
