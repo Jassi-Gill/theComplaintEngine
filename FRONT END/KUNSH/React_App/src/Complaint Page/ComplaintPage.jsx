@@ -102,6 +102,22 @@ function ComplaintPage() {
         setInputPhotoLink(e.target.value);
     };
 
+    const [rooms, setRooms] = useState([]);
+
+    // Fetch rooms from the API when the component mounts
+    useEffect(() => {
+        const getRooms = async () => {
+            try {
+                const response = await fetch('http://127.0.0.1:8000/api/rooms/');
+                const roomsData = await response.json();
+                setRooms(roomsData);
+            } catch (error) {
+                console.error('Error fetching rooms:', error);
+            }
+        };
+        getRooms();
+    }, []);
+
     return (
         <>
             <div className="background-image">
@@ -110,6 +126,14 @@ function ComplaintPage() {
             <div className="heading">
                 <h1>New Complaint</h1>
             </div>
+
+            {rooms.map(room => (
+                <div key={room.id}>
+                    {room.name}
+                </div>
+            ))}
+
+
             <form>
                 <div className="Form">
                     <input type="text" name="Name" placeholder="Enter FULL NAME" /><br />

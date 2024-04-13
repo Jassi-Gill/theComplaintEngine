@@ -5,4 +5,4 @@ from django.http import HttpResponse
 
 
 def complaintForm(request):
-    return render(request, "base/React_App/src/main.jsx")
+    return render(request, "")
