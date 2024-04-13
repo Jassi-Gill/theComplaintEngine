@@ -1,0 +1,78 @@
+/* styles.css */
+
+/* Navbar styles */
+.Navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    background-color: #f0f0f0;
+  }
+  
+  .icons {
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+  
+  #search-box {
+    margin-right: 10px;
+  }
+  
+  button {
+    margin-right: 10px;
+  }
+  
+  /* Table styles */
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    margin-top: 20px;
+  }
+  
+  th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+  }
+  
+  th {
+    background-color: #f2f2f2;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+  
+  /* Action buttons styles */
+  .action-buttons {
+    position: relative;
+  }
+  
+  .edit-button,
+  .delete-button {
+    display: none;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 5px;
+    padding: 5px 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+  }
+  
+  .edit-button {
+    right: 65px; /* Adjust the distance from the right edge */
+  }
+  
+  .delete-button {
+    right: 5px;
+  }
+  
+  .table-row:hover .edit-button,
+  .table-row:hover .delete-button {
+    display: inline-block;
+  }
+  
