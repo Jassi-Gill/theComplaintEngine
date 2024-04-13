@@ -6,3 +6,7 @@ from django.http import HttpResponse
 
 def complaintForm(request):
     return render(request, "main.html")
+
+
+def loginPage(request):
+    return render(request, "base/login_page.html")

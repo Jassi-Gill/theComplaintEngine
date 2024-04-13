@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{% load static %}
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Login</title>
+    <link rel="stylesheet" href="{% static 'styles/login_page.css' %}">
+</head>
+
+<body>
+    <div class="background-template">
+        <div class="admin-container">
+            <div class="photo-section">
+                <img src="{% static 'images/login_page.jpg' %}" alt="Engineering" class="background-photo">
+            </div>
+            <div class="login-section">
+                <div class="fac-login">
+                    <div class="user-type-dropdown">
+                        <select id="user-type-select">
+                            <option value="Student">Student</option>
+                            <option value="Faculty">Faculty</option>
+                            <option value="Admin">Admin</option>
+                            <option value="Worker">Worker</option>
+                        </select>
+                    </div>
+                    <h1>LOGIN</h1>
+                    <div class="inputs">
+                        <label for="username">USERNAME:</label>
+                        <input type="text" id="username" placeholder="Enter Id">
+                        <br>
+                        <label for="password">PASSWORD:</label>
+                        <input type="password" id="password" placeholder="••••••••">
+                    </div>
+                    <button id="login-button">LOGIN</button>
+                    <!-- <small>New User?</small> -->
+                    <p> </p>
+                    <button id="login-button">Sign Up</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="{% static 'js/login_page.jsx' %}"></script>
+</body>
+
+</html>
