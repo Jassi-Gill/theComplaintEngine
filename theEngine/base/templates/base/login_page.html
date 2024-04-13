@@ -6,7 +6,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin Login</title>
+    <title>theEngine</title>
     <link rel="stylesheet" href="{% static 'styles/login_page.css' %}">
 </head>
 
@@ -18,26 +18,39 @@
             </div>
             <div class="login-section">
                 <div class="fac-login">
-                    <div class="user-type-dropdown">
-                        <select id="user-type-select">
-                            <option value="Student">Student</option>
-                            <option value="Faculty">Faculty</option>
-                            <option value="Admin">Admin</option>
-                            <option value="Worker">Worker</option>
-                        </select>
-                    </div>
-                    <h1>LOGIN</h1>
-                    <div class="inputs">
-                        <label for="username">USERNAME:</label>
-                        <input type="text" id="username" placeholder="Enter Id">
-                        <br>
-                        <label for="password">PASSWORD:</label>
-                        <input type="password" id="password" placeholder="••••••••">
-                    </div>
-                    <button id="login-button">LOGIN</button>
-                    <!-- <small>New User?</small> -->
+                    <form action="" method="POST">
+                        {% csrf_token %}
+
+                        <div class="user-type-dropdown">
+                            <select name="userType" id="user-type-select">
+                                <option value="Student">Student</option>
+                                <option value="Faculty">Faculty</option>
+                                <option value="Admin">Admin</option>
+                                <option value="Worker">Worker</option>
+                            </select>
+                        </div>
+                        <h1>LOGIN</h1>
+                        <div class="inputs">
+                            <label for="">USERNAME:</label>
+                            <input type="text" name="username" id="username" placeholder="Enter Id">
+                            <br>
+                            <label for="">PASSWORD:</label>
+                            <input type="password" name="password" id="password" placeholder="••••••••">
+                        </div>
+
+                        {% if messages %}
+                        <ul class="messages">
+                            {% for message in messages %}
+                            <li>{{ message }}</li>
+                            {% endfor %}
+                        </ul>
+                        {% endif %}
+
+                        <input type="submit" value="Login">
+                    </form>
+
                     <p> </p>
-                    <button id="login-button">Sign Up</button>
+                    <a href="">SignUp</a>
                 </div>
             </div>
         </div>
