@@ -5,4 +5,4 @@ from django.http import HttpResponse
 
 
 def complaintForm(request):
-    return render(request, "")
+    return render(request, "main.html")
