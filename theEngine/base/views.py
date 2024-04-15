@@ -42,7 +42,7 @@ def loginPage(request):
 
 def logoutUser(request):
     logout(request)
-    return redirect("home")
+    return redirect("home-page")
 
 
 def signupPage(request):
