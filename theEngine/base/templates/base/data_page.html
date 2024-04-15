@@ -7,7 +7,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="{% static 'images/logo.ico' %}" type="image/x-icon">
-    <title>Sample Table</title>
+    <title>theEngine</title>
     <link rel="stylesheet" href="{% static 'styles/data_page.css' %}">
 </head>
 
@@ -15,12 +15,13 @@
     <div>
         {% include 'base/navbar.html' %}
 
-        <button>Student</button>
-        <button>Faculty</button>
-        <button>Worker</button>
-        <button>Admin</button>
+        <button class="show-all">All</button>
+        <button class="show-student">Student</button>
+        <button class="show-faculty">Faculty</button>
+        <button class="show-worker">Worker</button>
+        <button class="show-admin">Admin</button>
 
-        <div>
+        <div class="student-section">
             <table border="1" class="Student">
                 <caption>Student</caption>
                 <thead>
@@ -63,7 +64,7 @@
             </table>
         </div>
 
-        <div>
+        <div class="faculty-section">
             <table border="1" class="Faculty">
                 <caption>Faculty</caption>
                 <thead>
@@ -98,7 +99,7 @@
             </table>
         </div>
 
-        <div>
+        <div class="admin-section">
             <table border="1" class="Admin">
                 <caption>Admin</caption>
                 <thead>
@@ -132,38 +133,7 @@
             </table>
         </div>
 
-        <div>
-            <table border="1" class="workerDep">
-                <caption>Worker Department</caption>
-                <thead>
-                    <tr>
-                        <th>dId</th>
-                        <th>dName</th>
-                        <th>dLocation</th>
-                        <th>dEmail</th>
-                        <th>dHead</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Row 1, Cell 1</td>
-                        <td>Row 1, Cell 2</td>
-                        <td>Row 1, Cell 3</td>
-                        <td>Row 1, Cell 4</td>
-                        <td>Row 1, Cell 5</td>
-                    </tr>
-                    <tr>
-                        <td>Row 2, Cell 1</td>
-                        <td>Row 2, Cell 2</td>
-                        <td>Row 2, Cell 3</td>
-                        <td>Row 2, Cell 4</td>
-                        <td>Row 2, Cell 5</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-
-        <div>
+        <div class="worker-section">
             <table border="1" class="Worker">
                 <caption>Worker</caption>
                 <thead>
@@ -197,7 +167,38 @@
             </table>
         </div>
 
-        <div>
+        <!-- <div class="">
+            <table border="1" class="workerDep">
+                <caption>Worker Department</caption>
+                <thead>
+                    <tr>
+                        <th>dId</th>
+                        <th>dName</th>
+                        <th>dLocation</th>
+                        <th>dEmail</th>
+                        <th>dHead</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Row 1, Cell 1</td>
+                        <td>Row 1, Cell 2</td>
+                        <td>Row 1, Cell 3</td>
+                        <td>Row 1, Cell 4</td>
+                        <td>Row 1, Cell 5</td>
+                    </tr>
+                    <tr>
+                        <td>Row 2, Cell 1</td>
+                        <td>Row 2, Cell 2</td>
+                        <td>Row 2, Cell 3</td>
+                        <td>Row 2, Cell 4</td>
+                        <td>Row 2, Cell 5</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div> -->
+
+        <!-- <div>
             <table border="1" class="ongoingWorks">
                 <caption>Ongoing Works</caption>
                 <thead>
@@ -230,8 +231,32 @@
                 </tbody>
 
             </table>
-        </div>
+        </div> -->
+
     </div>
 </body>
+<script>
+    const buttons = document.querySelectorAll('button');
+
+    const sections = document.querySelectorAll('div[class$="-section"]');
+
+    buttons.forEach(button => {
+        button.addEventListener('click', () => {
+            if (button.classList.contains('show-all')) {
+                sections.forEach(section => {
+                    section.style.display = 'block';
+                });
+            } else {
+                sections.forEach(section => {
+                    section.style.display = 'none';
+                });
+
+                const className = button.classList[0].slice(5);
+                const section = document.querySelector(`.${className}-section`);
+                section.style.display = 'block';
+            }
+        });
+    });
+</script>
 
 </html>
