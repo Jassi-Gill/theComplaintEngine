@@ -11,6 +11,11 @@ const useEffect = (callback, dependencies) => {
 };
 
 function ComplaintPage() {
+  const app = document.getElementById('app');
+  if (!app) {
+    console.error("Element with id 'app' not found.");
+    return;
+  }
   const [complaintType, setComplaintType] = useState('');
   const [additionalOptions, setAdditionalOptions] = useState([]);
   const [photoLink, setPhotoLink] = useState('');
@@ -92,15 +97,32 @@ function ComplaintPage() {
     };
   
     // Clear the previous additional options
-    setAdditionalOptions([]);
-  
-    // Update the additional options if the selected value exists in the complaintOptions
-    if (selectedValue in complaintOptions) {
-      const selectedOptions = complaintOptions[selectedValue];
-      setAdditionalOptions(Object.keys(selectedOptions));
-      setSelectedOptionImages(selectedOptions);
-    }
-  };
+   // Inside handleComplaintTypeChange function
+if (selectedValue in complaintOptions) {
+  const selectedOptions = complaintOptions[selectedValue];
+  setAdditionalOptions(Object.keys(selectedOptions));
+  setSelectedOptionImages(selectedOptions);
+} else {
+  setAdditionalOptions([]);
+  setSelectedOptionImages({});
+}
+
+// Inside the ComplaintPage function
+additionalOptionsDiv.innerHTML = ''; // Clear previous options
+additionalOptions.forEach(option => {
+  const optionInput = document.createElement('input');
+  optionInput.type = 'radio';
+  optionInput.name = 'additionalOption';
+  optionInput.value = option;
+  optionInput.addEventListener('change', () => handleOptionChange(option));
+
+  const optionLabel = document.createElement('label');
+  optionLabel.textContent = option;
+
+  additionalOptionsDiv.appendChild(optionInput);
+  additionalOptionsDiv.appendChild(optionLabel);
+});
+}
   
   
 
@@ -130,11 +152,6 @@ function ComplaintPage() {
   headingDiv.appendChild(heading);
   app.appendChild(headingDiv);
 
-  rooms.forEach(room => {
-    const roomDiv = document.createElement('div');
-    roomDiv.textContent = room.name;
-    app.appendChild(roomDiv);
-  });
 
   const form = document.createElement('form');
   const formDiv = document.createElement('div');
