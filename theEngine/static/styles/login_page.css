@@ -45,7 +45,7 @@
 }
 
 .fac-login {
-  background-color: white;
+  background-color: rgb(203, 203, 203);
   padding: 20px;
   border: 1px solid #ccc;
   border-radius: 10px;
@@ -66,8 +66,9 @@
   font-size: 16px;
   border: 1px solid #ccc;
   border-radius: 5px;
-  
+  background-color: rgb(213, 244, 247);
 }
+
 
 .fac-login h1 {
   color: black;
@@ -95,8 +96,8 @@
 .signup {
   width: 100%;
   padding: 10px 10px;
-  background-color: blue;
-  color: white;
+  background-color: rgb(213, 244, 247);
+  color: rgb(0, 0, 0);
   border: none;
   border-radius: 2px;
   cursor: pointer;

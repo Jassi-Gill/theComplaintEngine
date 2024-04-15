@@ -9,6 +9,7 @@ from .forms import ComplaintRoomForm, UserForm, MyUserCreationForm
 from django.http import HttpResponse
 
 
+# @login_required(login_url="login-page")
 def homePage(request):
     return render(request, "base/home_page.html")
 
@@ -26,11 +27,11 @@ def loginPage(request):
     if request.method == "POST":
         username = request.POST.get("username")
         password = request.POST.get("password")
-        userType = request.POST.get("userType")
+        usertype = request.POST.get("usertype")
 
         user = authenticate(request, username=username, password=password)
 
-        if user is not None:
+        if user is not None and user.usertype == usertype:
             login(request, user)
             return redirect("home-page")
         else:
