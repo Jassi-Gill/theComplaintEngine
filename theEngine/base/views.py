@@ -33,3 +33,7 @@ def loginPage(request):
 
     context = {"page": page}
     return render(request, "base/login_page.html", context)
+
+
+def dataPage(request):
+    return render(request, "base/data_page.html")
