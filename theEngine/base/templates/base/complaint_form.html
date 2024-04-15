@@ -62,16 +62,17 @@
             const selectedValue = event.target.value;
             const complaintOptions = {
                 'Electrical': {
-                    'Cabin fan': './cabin Fan.jpg',
-                    'Ceiling Fan': './Ceiling FAn.jpg',
-                    'Stand fan': './Stand Fan.jpg',
-                    'LIGHT': '', // Add image path if available
-                    'Fan Regulator': '', // Add image path if available
-                    // Add other options and their image paths
+                    'Cabin fan': "{% static 'images/cabinFan.jpg' %}",
+                    'Ceiling Fan': "{% static 'images/ceilingFan.jpg' %}",
+                    'Stand fan': "{% static 'images/standFan.jpg' %}",
+                    'LIGHT': "",
+                    'Fan Regulator': "",
+                    'Exhaust Fan (Round)': "{% static 'images/exhaustFan.jpg' %}",
+                    'Echaust Fan':"{% static 'images/exhaustFan1.jpg' %}",
                 },
                 'Plumbing': {
                     'Toilet faucet/JetSpray': '', // Add image path
-                    'Toilet cistern / flushing': './cistern.jpg',
+                    'Toilet cistern / flushing': "{% static 'images/cistern.jpg' %}",
                     // Add other options and their image paths
                 },
                 'Civil': {
