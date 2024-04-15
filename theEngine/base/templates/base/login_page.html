@@ -29,7 +29,7 @@
                                 <option value="Worker">Worker</option>
                             </select>
                         </div>
-                        <h1>LOGIN</h1>
+                        <center><h1>LOGIN</h1></center>
                         <div class="inputs">
                             <label for="">USERNAME:</label>
                             <input type="text" name="username" id="username" placeholder="Enter Id">
@@ -46,11 +46,12 @@
                         </ul>
                         {% endif %}
 
-                        <input type="submit" value="Login">
+                        <input class = "signup" type="submit" value="Login">
+                        <p> New user ?</p>
                     </form>
 
                     <p> </p>
-                    <a href="{% url 'signup-page' %}">SignUp</a>
+                    <a class ="signup" href="{% url 'signup-page' %}" style="text-decoration:none">SignUp</a>
                 </div>
             </div>
         </div>
