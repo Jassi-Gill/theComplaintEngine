@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{% load static %}
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>theEngine</title>
+    <link rel="stylesheet" href="{% static 'styles/complaint_form.css' %}">
+</head>
+
+<body>
+    <div class="background-image">
+        <img src="{% static 'images/complaint_form.jpeg' %}" alt="Background Image">
+    </div>
+    <div class="heading">
+        <h1>New Complaint</h1>
+    </div>
+    <div id="app">
+        <form class="Form">
+            <input type="text" name="Name" placeholder="Enter FULL NAME" class="form-input">
+            <input type="text" name="Email" placeholder="Enter College e-mail Id" class="form-input">
+            <div class="small_box">
+                <input type="number" name="RollNo." placeholder="Enter Roll no." class="form-input">
+                <select name="batch" class="form-select">
+                    <option value="2025">2025</option>
+                    <option value="2026">2026</option>
+                    <option value="2027">2027</option>
+                    <option value="2028">2028</option>
+                </select>
+            </div>
+            <div class="small_box">
+                <input type="number" name="room no." placeholder="Enter room no." class="form-input">
+                <select name="Area" class="form-select">
+                    <option value="Boys' Hostel">Boys' Hostel</option>
+                    <option value="Girls' Hostel">Girls' Hostel</option>
+                    <option value="Faculty Residence (T1/T2)">Faculty Residence (T1/T2)</option>
+                    <option value="Admin Building">Admin Building</option>
+                    <option value="Academic Building">Academic Building</option>
+                    <option value="Security Barrack">Security Barrack</option>
+                </select>
+            </div>
+            <select name="complaintType" onchange="handleComplaintTypeChange(event)" class="form-select">
+                <option value="Select">Select</option>
+                <option value="Electrical">Electrical</option>
+                <option value="Plumbing">Plumbing</option>
+                <option value="Civil">Civil</option>
+                <option value="Others">Others</option>
+            </select>
+            <div id="additionalOptionsDiv" class="option-container"></div>
+            <input type="text" name="brief-desc" placeholder="Enter a brief description" class="form-input">
+            <input type="text" name="photo-link" placeholder="Upload photo link" oninput="handleInputChange(event)"
+                class="form-input">
+            <button type="button" onclick="handleButtonClick()" class="btn">Upload⤴️</button>
+            <input type="submit" class="btn">
+        </form>
+    </div>
+
+    <script>
+        function handleComplaintTypeChange(event) {
+            const selectedValue = event.target.value;
+            const complaintOptions = {
+                'Electrical': {
+                    'Cabin fan': './cabin Fan.jpg',
+                    'Ceiling Fan': './Ceiling FAn.jpg',
+                    'Stand fan': './Stand Fan.jpg',
+                    'LIGHT': '', // Add image path if available
+                    'Fan Regulator': '', // Add image path if available
+                    // Add other options and their image paths
+                },
+                'Plumbing': {
+                    'Toilet faucet/JetSpray': '', // Add image path
+                    'Toilet cistern / flushing': './cistern.jpg',
+                    // Add other options and their image paths
+                },
+                'Civil': {
+                    'Wall/Floor etc.': '', // Add image path
+                    // Add other options and their image paths
+                },
+                'Others': {
+                    'Air Conditioner': '', // Add image path
+                    // Add other options and their image paths
+                }
+            };
+
+            const additionalOptionsDiv = document.getElementById('additionalOptionsDiv');
+            additionalOptionsDiv.innerHTML = '';
+
+            if (selectedValue in complaintOptions) {
+                const selectedOptions = complaintOptions[selectedValue];
+                Object.keys(selectedOptions).forEach(option => {
+                    const optionDiv = document.createElement('div');
+                    const optionInput = document.createElement('input');
+                    optionInput.type = 'radio';
+                    optionInput.name = 'additionalOption';
+                    optionInput.value = option;
+                    optionDiv.appendChild(optionInput);
+
+                    const optionLabel = document.createElement('label');
+                    optionLabel.textContent = option;
+                    optionDiv.appendChild(optionLabel);
+
+                    if (selectedOptions[option]) {
+                        const optionImage = document.createElement('img');
+                        optionImage.src = selectedOptions[option];
+                        optionImage.alt = option;
+                        optionDiv.appendChild(optionImage);
+                    }
+
+                    additionalOptionsDiv.appendChild(optionDiv);
+                });
+            }
+        }
+
+        function handleButtonClick() {
+            const inputPhotoLink = document.querySelector('input[name="photo-link"]').value;
+            console.log(inputPhotoLink);
+        }
+
+        function handleInputChange(event) {
+            const inputPhotoLink = event.target.value;
+            console.log(inputPhotoLink);
+        }
+    </script>
+</body>
+
+</html>

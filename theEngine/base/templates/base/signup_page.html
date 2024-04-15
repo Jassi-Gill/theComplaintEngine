@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{% load static %}
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="{% static 'styles/signup_page.css' %}">
+</head>
+
+<body>
+    <div class="background-template">
+        <div class="admin-container">
+            <div class="photo-section">
+                <img src="{% static 'images/login_page.jpg' %}" alt="Engineering" class="background-photo">
+            </div>
+            <div class="login-section">
+                <div class="fac-login">
+                    <h1>SIGN UP</h1>
+                    <form id="signup-form" method="POST" action="">
+                        {% csrf_token %}
+
+                        <div class="inputs">
+                            <select name="usertype" id="usertype">
+                                <option value="Student">Student</option>
+                                <option value="Faculty">Faculty</option>
+                                <option value="Worker">Worker</option>
+                            </select>
+                            <label for="username">USERNAME:</label>
+                            <input type="text" id="username" name="username" placeholder="Enter username">
+                            <br>
+                            <label for="email">EMAIL:</label>
+                            <input type="text" id="email" name="email" placeholder="Enter email">
+                            <br>
+                            <label for="password">PASSWORD:</label>
+                            <input type="password" id="password" name="password1" placeholder="Enter password">
+                            <br>
+                            <label for="confirmPassword">CONFIRM PASSWORD:</label>
+                            <input type="password" id="password1" name="password2" placeholder="Confirm password">
+                        </div>
+                        {% if messages %}
+                        <ul class="messages">
+                            {% for message in messages %}
+                            <li>{{ message }}</li>
+                            {% endfor %}
+                        </ul>
+                        {% endif %}
+                        <input type="submit" value="Sign Up">
+                    </form>
+                    <h3>Already Signed Up</h3>
+                    <a href="{% url 'login-page' %}">Log In</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="{% static 'js/signup_page.js' %}"></script>
+</body>
+
+</html>

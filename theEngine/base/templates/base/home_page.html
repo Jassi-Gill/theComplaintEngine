@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{% load static %}
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>theEngine</title>
+    <link rel="stylesheet" href="{% static 'styles/home_page.css' %}">
+</head>
+<body>
+    <header class="Navbar">
+        <div>
+            <button id="home" class="icons">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M0 0h24v24H0V0z" fill="none"/>
+                    <path d="M12 5.66l5 4.52V19h-4v-5H9v5H5v-8.82l5-4.52zM7 11V3h2v5h6V3h2v8.99L12 16 7 11z"/>
+                </svg>
+            </button>
+            <div class="search-container">
+                <input type="text" placeholder="Search for Topics" id="search-box">
+                <button class="search-button">Search</button>
+            </div>
+        </div>
+        <div>
+            <button id="profile" class="icons">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M0 0h24v24H0V0z" fill="none"/>
+                    <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0-6c1.1 0 2 .9 2 2s-.9 2-2 2-2-.9-2-2 .9-2 2-2zm0 10c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+                </svg>
+            </button>
+        </div>
+    </header>
+    <div class="container">
+        <div id="side-panel" class="panel-container">
+            <div class="panel-content">
+                <h2>Browse Complaints by Types</h2>
+                <div class="complaints">
+                    <h3>Complaint Types</h3>
+                    <ul id="complaints-list">
+                        <!-- Complaint types will be added dynamically here -->
+                    </ul>
+                </div>
+                <div class="statistics">
+                    <h3>Statistics</h3>
+                    <div class="statistic">
+                        <h4>Total Workers:</h4>
+                        <p id="total-workers"></p>
+                    </div>
+                    <div class="statistic">
+                        <h4>Total Students:</h4>
+                        <p id="total-students"></p>
+                    </div>
+                    <div class="statistic">
+                        <h4>Total Faculties:</h4>
+                        <p id="total-faculties"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="panel">
+            <!-- Content in the main container -->
+        </div>
+        <div class="parent Joined-Threads">
+            <h2>Joined Threads</h2>
+            <div class="Thread">
+                <h3>Complaint Creator</h3>
+                <h4 id="thread-name">Fan Not working</h4>
+                <p>Thread Start Date</p>
+                <h6>Thread Type / Complaint Type</h6>
+            </div>
+        </div>
+        <div class="parent recent-threads">
+            <h2>Recent Threads</h2>
+            <div class="Recent-Thread">
+                <h2>Thread Name</h2>
+                <p>Latest Comment</p>
+                <p>Latest Comment date</p>
+            </div>
+        </div>
+    </div>
+    <footer class="footer">
+        <div>About Us</div>
+        <div>Admin Contact</div>
+    </footer>
+    <script src="{% static 'js/home_page.js' %}"></script>
+</body>
+</html>

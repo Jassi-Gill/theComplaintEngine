@@ -1,0 +1,54 @@
+.Navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+}
+
+.icons {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #fff;
+}
+
+#search-box {
+    padding: 5px;
+    margin-right: 10px;
+}
+
+.left-panel {
+    flex: 1;
+    background-color: #f2f2f2;
+    padding: 20px;
+}
+
+.center-panel {
+    flex: 2;
+    background-color: #fff;
+    padding: 20px;
+}
+
+.right-panel {
+    flex: 1;
+    background-color: #f2f2f2;
+    padding: 20px;
+}
+
+.Thread-boxes {
+    margin-top: 20px;
+}
+
+.thread1 {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.Reply-box1 {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 10px;
+}
