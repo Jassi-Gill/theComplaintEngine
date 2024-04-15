@@ -1,4 +1,4 @@
-@set "VIRTUAL_ENV=D:\VOLDER\PROJECTS\theComplaintEngine\venv"
+@set "VIRTUAL_ENV=D:\VOLDER\PROJECTS\theComplaintEngine\theEngine\venv"
 
 @set "VIRTUAL_ENV_PROMPT="
 @if NOT DEFINED VIRTUAL_ENV_PROMPT (
