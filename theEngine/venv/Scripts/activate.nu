@@ -32,7 +32,7 @@ export-env {
       }
     }
 
-    let virtual_env = 'D:\VOLDER\PROJECTS\theComplaintEngine\venv'
+    let virtual_env = 'D:\VOLDER\PROJECTS\theComplaintEngine\theEngine\venv'
     let bin = 'Scripts'
 
     let is_windows = ($nu.os-info.family) == 'windows'
