@@ -268,7 +268,7 @@ a {
 .header {
   padding: 1.5rem;
   background-color: var(--color-dark);
-  padding-top: 3px;
+  padding-top: 16px;
 }
 
 .header > .container {
@@ -302,6 +302,8 @@ a {
   align-items: center;
   gap: 1rem;
   border-radius: 4px;
+  align-self: center;
+  margin-left: 130px;
 }
 
 .header__search svg {
@@ -317,6 +319,7 @@ a {
   border: none;
   outline: none;
   color: var(--color-light);
+
 }
 
 @media screen and (max-width: 800px) {

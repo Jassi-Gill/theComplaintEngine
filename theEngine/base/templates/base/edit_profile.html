@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-
+{% load static %}
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,19 +10,7 @@
 </head>
 
 <body>
-    <div class="Navbar">
-        <button id="home" class="icons">
-            <i class="fas fa-house"></i>
-        </button>
-        <div>
-            <input type="text" placeholder="Search for Topics" id="search-box" />
-            <button>Search</button>
-        </div>
-        <button id="profile" class="icons">
-            <i class="fas fa-user"></i>
-        </button>
-        <p></p>
-    </div>
+    {% include 'base/navbar.html' %}
     <div class="edit-profile-box">
         <h2>EDIT YOUR PROFILE</h2>
         <label for="Name">Name:</label>
@@ -39,20 +27,7 @@
         <button>Update</button>
     </div>
 
-    <!-- Include React and ReactDOM if you're rendering this component within a React app -->
-    <!-- You might not need these if this HTML file is standalone -->
-    <!-- <script src="https://unpkg.com/react@17/umd/react.development.js"></script>
-    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script> -->
 
-    <!-- You might need to include your own JavaScript for handling button clicks and other interactions -->
-    <!-- <script>
-        function handleClick1() {
-            // Implement your logic here
-        }
-        function handleClick() {
-            // Implement your logic here
-        }
-    </script> -->
 </body>
 
 </html>

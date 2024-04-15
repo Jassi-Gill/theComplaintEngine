@@ -39,7 +39,7 @@ def loginPage(request):
             login(request, user)
             return redirect("home-page")
         else:
-            messages.error(request, "Username or Password does not exist!")
+            messages.error(request, "User details doesn't match! Recheck ")
 
     context = {"page": page}
     return render(request, "base/login_page.html", context)
