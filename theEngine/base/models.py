@@ -13,7 +13,7 @@ class User(AbstractUser):
     email = models.EmailField(unique=True, null=True, blank=True)
     usertype = models.CharField(choices=CHOICES, max_length=200, default="Student")
 
-    avatar = models.ImageField(null=True, default="avatar.svg")
+    avatar = models.ImageField(null=True, default="static/images/avatar.svg")
 
     REQUIRED_FIELDS = []
 
