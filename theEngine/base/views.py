@@ -18,6 +18,10 @@ def profilePage(request, pk):
     return render(request, "base/profile_page.html")
 
 
+def editProfile(request, pk):
+    return render(request, "base/edit_profile.html")
+
+
 def complaintForm(request):
     return render(request, "base/complaint_form.html")
 

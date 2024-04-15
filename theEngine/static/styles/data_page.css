@@ -1,78 +1,112 @@
-/* styles.css */
+/* Reset CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-/* Navbar styles */
-.Navbar {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 10px;
+body {
+    font-family: Arial, sans-serif;
     background-color: #f0f0f0;
-  }
-  
-  .icons {
-    background: none;
+    padding: 20px;
+}
+
+button {
+    margin: 5px;
+    padding: 8px 16px;
     border: none;
+    border-radius: 4px;
+    background-color: #333;
+    color: #fff;
     cursor: pointer;
-  }
-  
-  #search-box {
-    margin-right: 10px;
-  }
-  
-  button {
-    margin-right: 10px;
-  }
-  
-  /* Table styles */
-  table {
+}
+
+button:hover {
+    background-color: #555;
+}
+
+table {
     border-collapse: collapse;
     width: 100%;
     margin-top: 20px;
-  }
-  
-  th, td {
-    border: 1px solid #ddd;
+}
+
+caption {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+th, td {
     padding: 8px;
+    border: 1px solid #ccc;
+}
+
+th {
+    background-color: #f0f0f0;
+    font-weight: bold;
     text-align: left;
-  }
-  
-  th {
-    background-color: #f2f2f2;
-  }
-  
-  tr:nth-child(even) {
-    background-color: #f2f2f2;
-  }
-  
-  /* Action buttons styles */
-  .action-buttons {
-    position: relative;
-  }
-  
-  .edit-button,
-  .delete-button {
+}
+
+td {
+    text-align: left;
+}
+
+/* Styling specific tables */
+/* .Student, .Faculty, .Admin, .Worker, .workerDep, .ongoingWorks {
     display: none;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    right: 5px;
-    padding: 5px 10px;
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-  }
-  
-  .edit-button {
-    right: 65px; /* Adjust the distance from the right edge */
-  }
-  
-  .delete-button {
-    right: 5px;
-  }
-  
-  .table-row:hover .edit-button,
-  .table-row:hover .delete-button {
-    display: inline-block;
-  }
-  
+} */
+
+/* Styling for each table */
+.Student th {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.Student td {
+    background-color: #f2f2f2;
+}
+
+.Faculty th {
+    background-color: #2196F3;
+    color: white;
+}
+
+.Faculty td {
+    background-color: #f2f2f2;
+}
+
+.Admin th {
+    background-color: #FF5722;
+    color: white;
+}
+
+.Admin td {
+    background-color: #f2f2f2;
+}
+
+.Worker th {
+    background-color: #FF9800;
+    color: white;
+}
+
+.Worker td {
+    background-color: #f2f2f2;
+}
+
+.workerDep th {
+    background-color: #9C27B0;
+    color: white;
+}
+
+.workerDep td {
+    background-color: #f2f2f2;
+}
+
+.ongoingWorks th {
+    background-color: #795548;
+    color: white;
+}
+
+.ongoingWorks td {
+    background-color: #f2f2f2;
+}
