@@ -72,11 +72,13 @@
             <h1>Recent Threads</h1>
             {% for message in room_messages %}
             <div class="recent-thread">
-                <h2>{{message.user.name}}</h2>
-                <h4>{{message}}</h4>
-                <hr>
-                <h4>{{message.created|timesince}}</h4>
-                <label>{{message.room.complaintType.complaintType}}</label>
+                <h1>@{{message.user.name}}</h1>
+                <h6>{{message}}</h6>
+                <hr style="border: 2px;">
+                <div class = "recentdatetime">
+                <h5>{{message.created|timesince}}</h5>
+                </div><br>
+                <center><label class="type">{{message.room.complaintType.complaintType}}</label></center>
             </div>
             {% endfor %}
         </div>
