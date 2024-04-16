@@ -9,7 +9,7 @@ from .forms import ComplaintRoomForm, UserForm, MyUserCreationForm
 from django.http import HttpResponse
 
 
-# @login_required(login_url="login-page")
+@login_required(login_url="login-page")
 def homePage(request):
     return render(request, "base/home_page.html")
 
