@@ -29,12 +29,16 @@ class User(AbstractUser):
     mobile = models.CharField(max_length=10, null=True, blank=True)
     REQUIRED_FIELDS = []
 
+    def __str__(self):
+        return self.username
+
 
 class ComplaintType(models.Model):
     CHOICES = (
         ("Electrical", "Electrical"),
         ("Plumbing", "Plumbing"),
         ("Civil", "Civil"),
+        ("Mess", "Mess"),
         ("Other", "Other"),
     )
     complaintType = models.CharField(max_length=200, choices=CHOICES, default="Other")
@@ -44,7 +48,7 @@ class ComplaintType(models.Model):
 
 
 class ComplaintRoom(models.Model):
-    host = models.ForeignKey(User, on_delete=models.SET_NULL, null=True)
+    host = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
     cid = models.TextField(null=True, blank=True, unique=True)
     complaintType = models.ForeignKey(
         ComplaintType, on_delete=models.SET_NULL, null=True

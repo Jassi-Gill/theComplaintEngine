@@ -17,7 +17,9 @@
     <div class="newcomplain">
         <center>
             <a href="{% url 'complaint-form' %}" class="signup">New Complaint</a>
+            {% if request.user.usertype == "Admin" %}
             <a href="{% url 'data-page' %}" class="signup">All User Data</a>
+            {% endif %}
         </center>
     </div>
 

@@ -161,6 +161,20 @@ def editProfile(request, pk):
     return render(request, "base/edit_profile.html", {"form": form, "user": user1})
 
 
+@login_required(login_url="login")
+def deleteProfile(request, pk):
+    user = User.objects.get(username=pk)
+
+    if request.user != user and request.user.usertype != "Admin":
+        return redirect("home-page")
+
+    if request.method == "POST":
+        user.delete()
+        return redirect("home-page")
+
+    return render(request, "base/delete_page.html", {"obj": user})
+
+
 def loginPage(request):
     page = "login"
     if request.method == "POST":
