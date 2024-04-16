@@ -6,6 +6,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="{% static 'images/logo.ico' %}" type="image/x-icon">
     <title>theEngine</title>
     <link rel="stylesheet" href="{% static 'styles/thread_page.css' %}">
 </head>
@@ -13,7 +14,7 @@
 <body>
     {% include 'base/navbar.html' %}
 
-    <div class="pinned-comment">
+    <!-- <div class="pinned-comment">
         <div class="reply-circles">
             <div class="reply-circle active"></div>
             <div class="reply-circle"></div>
@@ -28,68 +29,69 @@
         <button>next</button>
         <button>Unpin Comment</button>
 
-    </div>
+    </div> -->
 
     <main>
         <section class="announcements">
-            <h2>DENNIS IVY PUBLIC ANNOUNCEMENTS</h2>
+            <h2>{{room.subject}}</h2>
             <div class="announcement-details">
-                <h3>Dennis Ivy Public Announcements</h3>
+                <h3>{{room.description}}</h3>
                 <div class="announcement-meta">
-                    <p>2 years, 6 months ago</p>
-                    <p>HOSTED BY @dennisivy</p>
+                    <p>{{room.created|timesince}}</p>
+                    <p>HOSTED BY <a href="{% url 'profile-page' room.host.username %}" style="text-decoration: none;">@{{room.host.username}}</a></p>
                 </div>
-                <p class="note">NOTE: Room will only display 25 most recent messages while this website is still in
-                    beta.</p>
                 <div class="chat-messages">
+                    {% for message in room_messages %}
                     <div class="chat-message">
                         <div class="chat-avatar">
-                            <img src="profile-picture1.png" alt="Profile Picture">
+                            <img src="{{message.user.avatar}}" onerror="loadAlternateImage(this)" alt="Main Image">
                         </div>
                         <div class="chat-content">
                             <div class="chat-header">
-                                <h5>user1</h5>
-                                <p>10:30 AM</p>
+                                <h4>{{message.user.username}}</h4>
+                                <p>{{message.created|timesince}}</p>
                             </div>
-                            <p>This is a sample chat message.</p>
-                            <div class="chat-actions">
+                            <p>{{message.body}}</p>
+                            <!-- <div class="chat-actions">
                                 <button class="pin-btn">Pin</button>
-                                <button class="reply-btn">Reply</button>
-                            </div>
+                            </div> -->
                         </div>
                     </div>
-                    <div class="chat-message">
-                        <div class="chat-avatar">
-                            <img src="profile-picture2.png" alt="Profile Picture">
-                        </div>
-                        <div class="chat-content">
-                            <div class="chat-header">
-                                <h5>user2</h5>
-                                <p>11:15 AM</p>
-                            </div>
-                            <p>This is another sample chat message.</p>
-                            <div class="chat-actions">
-                                <button class="pin-btn">Pin</button>
-                                <button class="reply-btn">Reply</button>
-                            </div>
-                        </div>
-                    </div>
+                    {% endfor %}
                 </div>
+
+                <form action="" method="POST">
+                    {% csrf_token %}
                 <div class="reply-box">
-                    <input type="text" placeholder="Reply to the announcement">
-                    <button class="send-btn">Send</button>
+                    <input type="text" name="body" placeholder="Reply to the announcement">
+                    <input type="submit" value="SEND" class="send-btn">
                 </div>
-                <button class="join-btn">Join</button>
+                </form>
+
             </div>
         </section>
 
         <section class="participants">
-            <h2>PARTICIPANTS (645 Joined)</h2>
+            <h2>PARTICIPANTS ({{participants.count}} Joined)</h2>
             <div class="participant-list">
-                <!-- Participant avatars and names will be added dynamically here -->
+                {% for participant in participants %}
+                <div class="participant">
+                    <div class="chat-avatar">
+                        <img src="{{participant.avatar}}" onerror="loadAlternateImage(this)" alt="Profile Picture">
+                    </div>
+                    <h4>{{participant.username}}</h4>
+                </div>
+                {% endfor %}
             </div>
         </section>
     </main>
 </body>
+<script>
+    function loadAlternateImage(img) {
+        img.src = "{% static 'images/avatar.svg' %}";
+
+        img.removeAttribute('onerror');
+    }
+</script>
 
 </html>

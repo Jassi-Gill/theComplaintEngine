@@ -45,7 +45,7 @@ class ComplaintType(models.Model):
 
 class ComplaintRoom(models.Model):
     host = models.ForeignKey(User, on_delete=models.SET_NULL, null=True)
-    cid = models.TextField(null=True, blank=True)
+    cid = models.TextField(null=True, blank=True, unique=True)
     complaintType = models.ForeignKey(
         ComplaintType, on_delete=models.SET_NULL, null=True
     )

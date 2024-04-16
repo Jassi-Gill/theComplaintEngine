@@ -21,8 +21,13 @@ button {
     cursor: pointer;
 }
 
+.inp :hover{
+    cursor: pointer;
+}
+
 button:hover {
     background-color: #555;
+    cursor: pointer;
 }
 
 table {
@@ -64,6 +69,7 @@ td {
 
 .Student td {
     background-color: #f2f2f2;
+    color: black;
 }
 
 .Faculty th {
@@ -73,6 +79,8 @@ td {
 
 .Faculty td {
     background-color: #f2f2f2;
+    color: black;
+
 }
 
 .Admin th {
@@ -82,6 +90,7 @@ td {
 
 .Admin td {
     background-color: #f2f2f2;
+    color: black;
 }
 
 .Worker th {
@@ -91,6 +100,7 @@ td {
 
 .Worker td {
     background-color: #f2f2f2;
+    color: black;
 }
 
 .workerDep th {

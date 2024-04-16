@@ -58,9 +58,9 @@
             </center>
             {% for room in rooms %}
             <div class="Thread">
-                <a href="{% url 'profile-page' room.host.username%}"><h2>{{room.host.name}}</h2><br></a>
+                <a style="text-decoration: none;" href="{% url 'profile-page' room.host.username%}"><h2>{{room.host.name}}</h2><br></a>
                 <center>
-                    <a href="{% url 'thread-page' room.cid%}"><h4 class="thread-name">{{room.subject}}</h4></a>
+                    <a style="text-decoration: none;" href="{% url 'thread-page' room.cid%}"><h4 class="thread-name">{{room.subject}}</h4></a>
                 </center>
                 <br>
                 <div class="startdate">{{room.created}}</div>
@@ -73,8 +73,8 @@
             {% for message in room_messages %}
             <div class="recent-thread">
 
-                <a href="{% url 'profile-page' message.user.username%}"> <h1>@{{message.user.name}}</h1></a>
-                <a href="{% url 'thread-page' message.room.cid%}"><h6>{{message}}</h6></a>
+                <a style="text-decoration: none;" href="{% url 'profile-page' message.user.username%}"> <h1>@{{message.user.name}}</h1></a>
+                <a style="text-decoration: none;" href="{% url 'thread-page' message.room.cid%}"><h6>{{message}}</h6></a>
                 <hr style="border: 2px;">
                 <div class = "recentdatetime">
                 <h5>{{message.created|timesince}}</h5>
