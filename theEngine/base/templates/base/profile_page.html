@@ -76,15 +76,21 @@
                 <center>
                     <h1>Joined Threads</h1>
                 </center><br>
+                {% for room in rooms %}
                 <div class="Thread">
-                    <h2>Complaint Creator</h2><br>
+                    <a style="text-decoration: none;" href="{% url 'profile-page' room.host.username%}">
+                        <h2>{{room.host.name}}</h2><br>
+                    </a>
                     <center>
-                        <h4 class="thread-name">Fan Not working</h4>
+                        <a style="text-decoration: none;" href="{% url 'thread-page' room.cid%}">
+                            <h4 class="thread-name">{{room.subject}}</h4>
+                        </a>
                     </center>
                     <br>
-                    <div class="startdate">Thread Start Date</div>
-                    <div class="threadtype">Thread Type / Complaint Type</div>
+                    <div class="startdate">{{room.created}}</div>
+                    <div class="threadtype">{{room.complaintType.complaintType}} / {{room.cid}}</div>
                 </div>
+                {% endfor %}
             </div>
         </div>
         <div class="parent-recent-threads">
