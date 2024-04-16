@@ -17,15 +17,9 @@ def homePage(request):
     )
 
     topic = ComplaintType.objects.all()
-    stu_count = ComplaintRoom.objects.filter(
-        Q(host__usertype__icontains="Student")
-    ).count()
-    fac_count = ComplaintRoom.objects.filter(
-        Q(host__usertype__icontains="Faculty")
-    ).count()
-    wor_count = ComplaintRoom.objects.filter(
-        Q(host__usertype__icontains="Worker")
-    ).count()
+    stu_count = User.objects.filter(Q(usertype__icontains="Student")).count()
+    fac_count = User.objects.filter(Q(usertype__icontains="Faculty")).count()
+    wor_count = User.objects.filter(Q(usertype__icontains="Worker")).count()
 
     room_messages = Message.objects.filter(
         Q(room__complaintType__complaintType__icontains=q)
@@ -53,15 +47,9 @@ def profilePage(request, pk):
     rooms = ComplaintRoom.objects.filter(Q(host__username__icontains=pk))
 
     topic = ComplaintType.objects.all()
-    stu_count = ComplaintRoom.objects.filter(
-        Q(host__usertype__icontains="Student")
-    ).count()
-    fac_count = ComplaintRoom.objects.filter(
-        Q(host__usertype__icontains="Faculty")
-    ).count()
-    wor_count = ComplaintRoom.objects.filter(
-        Q(host__usertype__icontains="Worker")
-    ).count()
+    stu_count = User.objects.filter(Q(usertype__icontains="Student")).count()
+    fac_count = User.objects.filter(Q(usertype__icontains="Faculty")).count()
+    wor_count = User.objects.filter(Q(usertype__icontains="Worker")).count()
 
     room_messages = Message.objects.filter(Q(user__username__icontains=pk))
     context = {
@@ -79,7 +67,7 @@ def profilePage(request, pk):
 def editProfile(request, pk):
     user1 = User.objects.get(username=pk)
     print(request.user.username, " ", pk)
-    if request.user.username != pk:
+    if request.user.usertype != "Admin" and request.user.username != pk:
         return redirect("home-page")
 
     form = UserForm(instance=user1)
@@ -139,4 +127,24 @@ def signupPage(request):
 
 
 def dataPage(request):
-    return render(request, "base/data_page.html")
+    stu = User.objects.filter(Q(usertype__icontains="Student"))
+    fac = User.objects.filter(Q(usertype__icontains="Faculty"))
+    wor = User.objects.filter(Q(usertype__icontains="Worker"))
+    admin = User.objects.filter(Q(usertype__icontains="Admin"))
+
+    stu_count = User.objects.filter(Q(usertype__icontains="Student")).count()
+    fac_count = User.objects.filter(Q(usertype__icontains="Faculty")).count()
+    wor_count = User.objects.filter(Q(usertype__icontains="Worker")).count()
+    admin_count = User.objects.filter(Q(usertype__icontains="Admin")).count()
+
+    context = {
+        "stu": stu,
+        "fac": fac,
+        "wor": wor,
+        "admin": admin,
+        "stu_count": stu_count,
+        "fac_count": fac_count,
+        "admin_count": admin_count,
+        "wor_count": wor_count,
+    }
+    return render(request, "base/data_page.html", context)
