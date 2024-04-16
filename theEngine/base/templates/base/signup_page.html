@@ -24,11 +24,13 @@
                         {% csrf_token %}
 
                         <div class="inputs">
+                            <div class="dropdown" >
                             <select name="usertype" id="usertype">
                                 <option value="Student">Student</option>
                                 <option value="Faculty">Faculty</option>
                                 <option value="Worker">Worker</option>
                             </select>
+                        </div>
                             <label for="username">USERNAME:</label>
                             <input type="text" id="username" name="username" placeholder="Enter username">
                             <br>
@@ -48,10 +50,10 @@
                             {% endfor %}
                         </ul>
                         {% endif %}
-                        <input type="submit" value="Sign Up">
+                        <input type="submit" value="Sign Up" class="signup">
                     </form>
-                    <h3>Already Signed Up</h3>
-                    <a href="{% url 'login-page' %}">Log In</a>
+                    <h3>Already Signed Up ?</h3>
+                    <a  class ="signup-1" href="{% url 'login-page' %}" style="text-decoration: none;">Log In</a>
                 </div>
             </div>
         </div>
