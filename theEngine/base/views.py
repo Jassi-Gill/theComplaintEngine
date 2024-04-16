@@ -49,7 +49,30 @@ def complaintThread(request, pk):
 
 
 def profilePage(request, pk):
-    return render(request, "base/profile_page.html")
+
+    rooms = ComplaintRoom.objects.filter(Q(host__username__icontains=pk))
+
+    topic = ComplaintType.objects.all()
+    stu_count = ComplaintRoom.objects.filter(
+        Q(host__usertype__icontains="Student")
+    ).count()
+    fac_count = ComplaintRoom.objects.filter(
+        Q(host__usertype__icontains="Faculty")
+    ).count()
+    wor_count = ComplaintRoom.objects.filter(
+        Q(host__usertype__icontains="Worker")
+    ).count()
+
+    room_messages = Message.objects.filter(Q(user__username__icontains=pk))
+    context = {
+        "rooms": rooms,
+        "topics": topic,
+        "stu_count": stu_count,
+        "fac_count": fac_count,
+        "wor_count": wor_count,
+        "room_messages": room_messages,
+    }
+    return render(request, "base/profile_page.html", context)
 
 
 @login_required(login_url="login-page")

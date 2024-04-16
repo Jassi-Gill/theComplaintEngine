@@ -115,11 +115,12 @@ body {
 
 .complaints {
     border-radius: 10px;
-    
     background-color: #666;
     padding-bottom: 10px;
     padding-top: 10px;
     margin-bottom: 10px;
+    height: 51vh;
+    overflow-y: scroll;
 }
 
 .complaints a {
@@ -174,6 +175,11 @@ body {
     /* Add position relative for absolute positioning */
 }
 
+.boxes {
+    height: 73vh;
+    overflow-y: scroll;
+}
+
 .Thread {
     padding: 20px;
     background-color: #f9f9f9;
@@ -203,8 +209,8 @@ body {
     border-radius: 10px;
     margin-bottom: 5px;
     margin-left: 10px;
-    height: 100vh; /* Set the height of the div */
-    overflow-y: scroll; /* Add vertical scrollbar */
+    height: 100vh; 
+    overflow-y: scroll; 
 }
 
 .parent-recent-threads h1 {
