@@ -5,6 +5,24 @@ body {
     background-color: #f0f0f0;
 }
 
+.newcomplain {
+    padding-top: 20px;
+}
+
+.signup {
+    width:150px;
+    padding: 10px 10px;
+    background-color: rgb(117, 84, 196);
+    color: rgb(254, 250, 250);
+    border: none;
+    border-radius: 2px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: small;
+    border-radius: 20px;
+}
+
 .Navbar {
     background-color: #333;
     color: white;
@@ -72,8 +90,9 @@ body {
 }
 
 .container {
-    display: flex;
-    padding-top: 60px;
+    display: grid;
+    grid-template-columns: 1fr 0fr 3fr 1fr;
+    padding-top: 20px;
     /* Adjust this padding to make space for the navbar */
 }
 
@@ -82,16 +101,18 @@ body {
     /* Set the width of the panel */
     overflow-y: auto;
     /* Enable scrolling for the panel */
-    background-color: #555;
+    background-color: #2D2D39;
     /* Change the color of the panel */
     color: white;
-    padding: 20px;
+    padding: 0px;
+    padding-right: 10px;
+    margin-top: 0px;
 }
 
 .panel-content {
     text-align: center;
     padding: 20px;
-    background-color: #666;
+    background-color: #555;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     margin-bottom: 20px;
@@ -104,6 +125,15 @@ body {
     padding: 0;
 }
 
+.complaints {
+    border-radius: 10px;
+
+    background-color: #666;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    margin-bottom: 10px;
+}
+
 .complaints a {
     display: block;
     color: white;
@@ -114,6 +144,11 @@ body {
 
 .complaints a:hover {
     background-color: #444;
+}
+
+.statistic {
+    border-radius: 10px;
+    background-color: #666;
 }
 
 .statistics {
@@ -141,7 +176,7 @@ body {
 .parent-Joined-Threads {
     flex: 2;
     /* Increase flex value to widen */
-    margin-left: 20px;
+    margin-left: 0px;
     padding: 20px;
     background-color: white;
     border-radius: 10px;
