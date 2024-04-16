@@ -90,8 +90,8 @@
   border-radius: 2px;
   cursor: pointer;
   transition: background-color 0.3s ease;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-  font-size: medium;
+  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-size: larger;
   font-weight: bold;
   border-radius: 10px;
 }
