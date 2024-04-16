@@ -12,7 +12,7 @@ body {
 .signup {
     width:150px;
     padding: 10px 10px;
-    background-color: rgb(117, 84, 196);
+    background-color: rgb(87, 53, 167);
     color: rgb(254, 250, 250);
     border: none;
     border-radius: 2px;
@@ -116,6 +116,7 @@ body {
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     margin-bottom: 0px;
+    padding-bottom: 27px;
     overflow-y: auto;
     /* Add scrollbar for vertical overflow */
 }
@@ -127,11 +128,12 @@ body {
 
 .complaints {
     border-radius: 10px;
-
     background-color: #666;
     padding-bottom: 10px;
     padding-top: 10px;
     margin-bottom: 10px;
+    height: 50vh; /* Set the height of the div */
+    overflow-y: scroll; /* Add vertical scrollbar */
 }
 
 .complaints a {
@@ -182,6 +184,8 @@ body {
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     position: relative;
+    height: 100vh; /* Set the height of the div */
+    overflow-y: scroll; /* Add vertical scrollbar */
     /* Add position relative for absolute positioning */
 }
 
@@ -212,6 +216,8 @@ body {
     border-radius: 10px;
     margin-bottom: 5px;
     margin-left: 10px;
+    height: 100vh; /* Set the height of the div */
+  overflow-y: scroll; /* Add vertical scrollbar */
 }
 
 .recrent-thread {
