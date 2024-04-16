@@ -1,12 +1,3 @@
-.background-template {
-  background-color: white;
-  background-size: cover;
-  background-position: center;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
 
 .admin-container {
   display: flex;
@@ -17,10 +8,17 @@
   animation: fadeIn 1s ease-in-out;
 }
 
+.background-template {
+  min-height: 100vh;
+  position: relative;
+}
+
 .background-photo {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+  width: 50%; /* Reduce the width to 50% */
+  height: auto; /* Maintain aspect ratio */
+  position: fixed;
+  top: 0;
+  left: 0;
 }
 
 @keyframes fadeIn {
