@@ -55,7 +55,7 @@ def editProfile(request, pk):
         form = UserForm(request.POST, request.FILES, instance=user)
         if form.is_valid():
             form.save()
-            return redirect("user-profile", pk=user.username)
+            return redirect("profile-page", pk)
         else:
             messages.error(request, "Check Details!")
 
