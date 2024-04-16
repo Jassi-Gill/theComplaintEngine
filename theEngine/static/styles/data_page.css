@@ -21,8 +21,13 @@ button {
     cursor: pointer;
 }
 
+.inp :hover{
+    cursor: pointer;
+}
+
 button:hover {
     background-color: #555;
+    cursor: pointer;
 }
 
 table {

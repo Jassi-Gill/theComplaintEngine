@@ -17,25 +17,27 @@
     <div class="container">
         <div id="side-panel" class="panel-container">
             <div class="panel-content">
-                <h2>Browse Complaints by Types</h2>
+
+                <h2>Browse Complaints</h2>
                 <div class="complaints">
                     <h3>Complaint Types</h3>
-                    <ul id="complaints-list">
-                    </ul>
+                    {% for topic in topics %}
+                    <a href="{% url 'home-page' %}?q={{topic.complaintType}}">{{topic.complaintType}}</a>
+                    {% endfor %}
                 </div>
                 <div class="statistics">
                     <h3>Statistics</h3>
                     <div class="statistic">
                         <h4>Total Workers:</h4>
-                        <p id="total-workers"></p>
+                        <p id="total-workers">{{wor_count}}</p>
                     </div>
                     <div class="statistic">
                         <h4>Total Students:</h4>
-                        <p id="total-students"></p>
+                        <p id="total-students">{{stu_count}}</p>
                     </div>
                     <div class="statistic">
                         <h4>Total Faculties:</h4>
-                        <p id="total-faculties"></p>
+                        <p id="total-faculties">{{fac_count}}</p>
                     </div>
                 </div>
             </div>
@@ -47,27 +49,28 @@
                 <h1>About User</h1>
             </center><br>
             <div class="user_information1">
-                
-                <div> <center>
-                    <div>
-                        Username :
-                    </div>
-                    <div>
-                        Name :
-                    </div>
-                    <div>
-                        User Type :
-                    </div>
-                    <div>
-                        User Batch :
-                    </div>
-                </center>
-                 </div>
-                
-                
+
+                <div>
+                    <center>
+                        <div>
+                            {{profile_user.name}}
+                        </div>
+                        <div>
+                            @{{profile_user.username}}
+                        </div>
+                        <div>
+                            {{profile_user.usertype}}
+                        </div>
+                        <div>
+                            {{profile_user.batch}} {{profile_user.year}}
+                        </div>
+                    </center>
+                </div>
+
+
 
             </div><br>
-            
+
 
             <div class="boxes">
                 <center>
@@ -91,8 +94,8 @@
                 <h1>@{{message.user.name}}</h1>
                 <h6>{{message}}</h6>
                 <hr style="border: 2px;">
-                <div class = "recentdatetime">
-                <h5>{{message.created|timesince}}</h5>
+                <div class="recentdatetime">
+                    <h5>{{message.created|timesince}}</h5>
                 </div><br>
                 <center><label class="type">{{message.room.complaintType.complaintType}}</label></center>
             </div>
@@ -100,9 +103,14 @@
         </div>
     </div>
     <footer class="footer">
-        <div>About Us<p>We've pioneered a revolutionary complaint engine designed to streamline grievance resolution within any system. Our vision-driven team has crafted a solution that ensures complaints are swiftly addressed, alleviating concerns and fostering smoother operations. With our innovative approach, managing complaints becomes a worry of the past, empowering stakeholders to focus on progress and productivity.
+        <div>About Us<p>We've pioneered a revolutionary complaint engine designed to streamline grievance resolution
+                within any system. Our vision-driven team has crafted a solution that ensures complaints are swiftly
+                addressed, alleviating concerns and fostering smoother operations. With our innovative approach,
+                managing complaints becomes a worry of the past, empowering stakeholders to focus on progress and
+                productivity.
 
-        </p></div><br>
+            </p>
+        </div><br>
         <div>Admins
             <div>
                 Jasswindar Singh Gill

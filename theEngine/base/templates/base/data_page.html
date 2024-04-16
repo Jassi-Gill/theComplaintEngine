@@ -41,10 +41,10 @@
         {% include 'base/navbar.html' %}
         <div class="buttons">
             <button class="show-all">All</button>
-            <button class="show-student">Student</button>
-            <button class="show-faculty">Faculty</button>
-            <button class="show-worker">Worker</button>
-            <button class="show-admin">Admin</button>
+            <button class="show-student">Student({{stu_count}})</button>
+            <button class="show-faculty">Faculty({{fac_count}})</button>
+            <button class="show-worker">Worker({{wor_count}})</button>
+            <button class="show-admin">Admin({{admin_count}})</button>
         </div>
 
 
@@ -72,17 +72,17 @@
                         <td>{{s.username}}</td>
                         <td>{{s.name}}</td>
                         <td>{{s.email}}</td>
-                        <td>{{s.name}}</td>
+                        <td>None</td>
                         <td>{{s.mess}}</td>
                         <td>{{s.roomno}}</td>
                         <td>{{s.mobile}}</td>
-                        <td>{{s.name}}</td>
+                        <td>None</td>
                         <td>{{s.batch}} {{s.year}}</td>
                         <td>
-                            <a href="{% url 'edit-profile' s.username %}" style="text-decoration: none;"><input
-                                    class="edit-btn" value="Edit"></a>
-                            <a href="{% url 'edit-profile' s.username %}" style="text-decoration: none;"><input
-                                    class="delete-btn" value="Delete"></a>
+                            <a class="inp" href="{% url 'edit-profile' s.username %}"
+                                style="text-decoration: none;"><input class="edit-btn" value="Edit"></a>
+                            <a class="inp" href="{% url 'edit-profile' s.username %}"
+                                style="text-decoration: none;"><input class="delete-btn" value="Delete"></a>
                         </td>
                     </tr>
                     {% endfor %}
@@ -93,45 +93,31 @@
             <table border="1" class="Faculty">
                 <caption>Faculty</caption>
                 <thead>
-                    {% for s in stu %}
                     <tr>
                         <th>tfacId</th>
                         <th>facName</th>
                         <th>{facMobileNo}</th>
                         <th>facEmail</th>
                         <th>facDesig</th>
-                        <th>facPass</th>
                         <th>Actions</th>
                     </tr>
-                    {% endfor %}
                 </thead>
                 <tbody>
+                    {% for f in fac %}
                     <tr>
-                        <td>Row 1, Cell 1</td>
-                        <td>Row 1, Cell 2</td>
-                        <td>Row 1, Cell 3</td>
-                        <td>Row 1, Cell 4</td>
-                        <td>Row 1, Cell 5</td>
-                        <td>Row 1, Cell 6</td>
+                        <td>{{f.username}}</td>
+                        <td>{{f.name}}</td>
+                        <td>{{f.mobile}}</td>
+                        <td>{{f.email}}</td>
+                        <td>None</td>
                         <td>
-                            <a href="{% url 'edit-profile' s.username %}" style="text-decoration: none;"><input
-                                    class="edit-btn" value="Edit"></a>
-                            <a href="{% url 'edit-profile' s.username %}" style="text-decoration: none;"><input
-                                    class="delete-btn" value="Delete"></a>
+                            <a class="inp" href="{% url 'edit-profile' f.username %}"
+                                style="text-decoration: none;"><input class="edit-btn" value="Edit"></a>
+                            <a class="inp" href="{% url 'edit-profile' f.username %}"
+                                style="text-decoration: none;"><input class="delete-btn" value="Delete"></a>
                         </td>
                     </tr>
-                    <tr>
-                        <td>Row 2, Cell 1</td>
-                        <td>Row 2, Cell 2</td>
-                        <td>Row 2, Cell 3</td>
-                        <td>Row 2, Cell 4</td>
-                        <td>Row 2, Cell 5</td>
-                        <td>Row 2, Cell 6</td>
-                        <td>
-                            <input class="edit-btn" value="Edit">
-                            <input class="delete-btn" value="Delete">
-                        </td>
-                    </tr>
+                    {% endfor %}
                 </tbody>
 
             </table>
@@ -143,7 +129,6 @@
                 <thead>
                     <tr>
                         <th>adUserName</th>
-                        <th>adPass</th>
                         <th>adName</th>
                         <th>{adMobileNo}</th>
                         <th>adEmail</th>
@@ -152,30 +137,21 @@
                     </tr>
                 </thead>
                 <tbody>
+                    {% for a in admin %}
                     <tr>
-                        <td>Row 1, Cell 1</td>
-                        <td>Row 1, Cell 2</td>
-                        <td>Row 1, Cell 3</td>
-                        <td>Row 1, Cell 4</td>
-                        <td>Row 1, Cell 5</td>
-                        <td>Row 1, Cell 6</td>
+                        <td>{{a.username}}</td>
+                        <td>{{a.name}}</td>
+                        <td>{{a.mobile}}</td>
+                        <td>{{a.email}}</td>
+                        <td>None</td>
                         <td>
-                            <input class="edit-btn" value="Edit">
-                            <input class="delete-btn" value="Delete">
+                            <a class="inp" href="{% url 'edit-profile' a.username %}"
+                                style="text-decoration: none;"><input class="edit-btn" value="Edit"></a>
+                            <a class="inp" href="{% url 'edit-profile' a.username %}"
+                                style="text-decoration: none;"><input class="delete-btn" value="Delete"></a>
                         </td>
                     </tr>
-                    <tr>
-                        <td>Row 2, Cell 1</td>
-                        <td>Row 2, Cell 2</td>
-                        <td>Row 2, Cell 3</td>
-                        <td>Row 2, Cell 4</td>
-                        <td>Row 2, Cell 5</td>
-                        <td>Row 2, Cell 6</td>
-                        <td>
-                            <input class="edit-btn" value="Edit">
-                            <input class="delete-btn" value="Delete">
-                        </td>
-                    </tr>
+                    {% endfor %}
                 </tbody>
             </table>
         </div>
@@ -190,35 +166,25 @@
                         <th>dId</th>
                         <th>{workerMoblieNo}</th>
                         <th>workerDesig</th>
-                        <th>workerPass</th>
                         <th>Actions</th>
                     </tr>
                 </thead>
                 <tbody>
+                    {% for w in wor %}
                     <tr>
-                        <td>Row 1, Cell 1</td>
-                        <td>Row 1, Cell 2</td>
-                        <td>Row 1, Cell 3</td>
-                        <td>Row 1, Cell 4</td>
-                        <td>Row 1, Cell 5</td>
-                        <td>Row 1, Cell 6</td>
+                        <td>{{w.username}}</td>
+                        <td>{{w.name}}</td>
+                        <td>None</td>
+                        <td>{{w.mobile}}</td>
+                        <td>None</td>
                         <td>
-                            <input class="edit-btn" value="Edit">
-                            <input class="delete-btn" value="Delete">
+                            <a class="inp" href="{% url 'edit-profile' w.username %}"
+                                style="text-decoration: none;"><input class="edit-btn" value="Edit"></a>
+                            <a class="inp" href="{% url 'edit-profile' w.username %}"
+                                style="text-decoration: none;"><input class="delete-btn" value="Delete"></a>
                         </td>
                     </tr>
-                    <tr>
-                        <td>Row 2, Cell 1</td>
-                        <td>Row 2, Cell 2</td>
-                        <td>Row 2, Cell 3</td>
-                        <td>Row 2, Cell 4</td>
-                        <td>Row 2, Cell 5</td>
-                        <td>Row 2, Cell 6</td>
-                        <td>
-                            <input class="edit-btn" value="Edit">
-                            <input class="delete-btn" value="Delete">
-                        </td>
-                    </tr>
+                    {% endfor %}
                 </tbody>
             </table>
         </div>
@@ -288,10 +254,6 @@
 
             </table>
         </div> -->
-
-
-
-        <!-- Other sections... -->
 
     </div>
 </body>

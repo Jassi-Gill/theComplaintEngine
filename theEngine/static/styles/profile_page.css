@@ -184,7 +184,7 @@ body {
 
 .boxes {
     background-color: #f9f9f9;
-    height: 73vh;
+    height: 71vh;
     overflow-y: scroll;
     border-radius: 10px;
 }
