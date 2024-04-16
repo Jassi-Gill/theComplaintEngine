@@ -43,23 +43,27 @@ def homePage(request):
 
 
 def profilePage(request, pk):
-
     return render(request, "base/profile_page.html")
 
 
+@login_required(login_url="login-page")
 def editProfile(request, pk):
-    user = request.user
-    form = UserForm(instance=user)
+    user1 = User.objects.get(username=pk)
+    print(request.user.username, " ", pk)
+    if request.user.username != pk:
+        return redirect("home-page")
+
+    form = UserForm(instance=user1)
 
     if request.method == "POST":
-        form = UserForm(request.POST, request.FILES, instance=user)
+        form = UserForm(request.POST, request.FILES, instance=user1)
         if form.is_valid():
             form.save()
             return redirect("profile-page", pk)
         else:
             messages.error(request, "Check Details!")
 
-    return render(request, "base/edit_profile.html", {"form": form, "user": user})
+    return render(request, "base/edit_profile.html", {"form": form, "user": user1})
 
 
 def complaintForm(request):
