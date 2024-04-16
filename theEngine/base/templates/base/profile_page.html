@@ -17,25 +17,27 @@
     <div class="container">
         <div id="side-panel" class="panel-container">
             <div class="panel-content">
-                <h2>Browse Complaints by Types</h2>
+
+                <h2>Browse Complaints</h2>
                 <div class="complaints">
                     <h3>Complaint Types</h3>
-                    <ul id="complaints-list">
-                    </ul>
+                    {% for topic in topics %}
+                    <a href="{% url 'home-page' %}?q={{topic.complaintType}}">{{topic.complaintType}}</a>
+                    {% endfor %}
                 </div>
                 <div class="statistics">
                     <h3>Statistics</h3>
                     <div class="statistic">
                         <h4>Total Workers:</h4>
-                        <p id="total-workers"></p>
+                        <p id="total-workers">{{wor_count}}</p>
                     </div>
                     <div class="statistic">
                         <h4>Total Students:</h4>
-                        <p id="total-students"></p>
+                        <p id="total-students">{{stu_count}}</p>
                     </div>
                     <div class="statistic">
                         <h4>Total Faculties:</h4>
-                        <p id="total-faculties"></p>
+                        <p id="total-faculties">{{fac_count}}</p>
                     </div>
                 </div>
             </div>
@@ -55,21 +57,27 @@
                 <br>
 
             </div>
-            
+
 
             <div class="boxes">
                 <center>
-                    <h1>Joined Threads</h1>
+                    <h3>Joined Threads</h3>
                 </center>
+                {% for room in rooms %}
                 <div class="Thread">
-                    <h2>Complaint Creator</h2><br>
+                    <a style="text-decoration: none;" href="{% url 'profile-page' room.host.username%}">
+                        <h2>{{room.host.name}}</h2><br>
+                    </a>
                     <center>
-                        <h4 class="thread-name">Fan Not working</h4>
+                        <a style="text-decoration: none;" href="{% url 'thread-page' room.cid%}">
+                            <h4 class="thread-name">{{room.subject}}</h4>
+                        </a>
                     </center>
                     <br>
-                    <div class="startdate">Thread Start Date</div>
-                    <div class="threadtype">Thread Type / Complaint Type</div>
+                    <div class="startdate">{{room.created}}</div>
+                    <div class="threadtype">{{room.complaintType.complaintType}} / {{room.cid}}</div>
                 </div>
+                {% endfor %}
             </div>
         </div>
         <div class="parent-recent-threads">
@@ -79,8 +87,8 @@
                 <h1>@{{message.user.name}}</h1>
                 <h6>{{message}}</h6>
                 <hr style="border: 2px;">
-                <div class = "recentdatetime">
-                <h5>{{message.created|timesince}}</h5>
+                <div class="recentdatetime">
+                    <h5>{{message.created|timesince}}</h5>
                 </div><br>
                 <center><label class="type">{{message.room.complaintType.complaintType}}</label></center>
             </div>
@@ -88,9 +96,14 @@
         </div>
     </div>
     <footer class="footer">
-        <div>About Us<p>We've pioneered a revolutionary complaint engine designed to streamline grievance resolution within any system. Our vision-driven team has crafted a solution that ensures complaints are swiftly addressed, alleviating concerns and fostering smoother operations. With our innovative approach, managing complaints becomes a worry of the past, empowering stakeholders to focus on progress and productivity.
+        <div>About Us<p>We've pioneered a revolutionary complaint engine designed to streamline grievance resolution
+                within any system. Our vision-driven team has crafted a solution that ensures complaints are swiftly
+                addressed, alleviating concerns and fostering smoother operations. With our innovative approach,
+                managing complaints becomes a worry of the past, empowering stakeholders to focus on progress and
+                productivity.
 
-        </p></div><br>
+            </p>
+        </div><br>
         <div>Admins
             <div>
                 Jasswindar Singh Gill
