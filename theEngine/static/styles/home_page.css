@@ -217,7 +217,12 @@ body {
     margin-bottom: 5px;
     margin-left: 10px;
     height: 100vh; /* Set the height of the div */
-  overflow-y: scroll; /* Add vertical scrollbar */
+    overflow-y: scroll; /* Add vertical scrollbar */
+}
+
+.parent-recent-threads h1 {
+    font-weight: bold;
+    color: #2D2D39;
 }
 
 .recrent-thread {
