@@ -28,6 +28,7 @@
                 <h2>Browse Complaints</h2>
                 <div class="complaints">
                     <h3>Complaint Types</h3>
+                    <a href="{% url 'home-page' %}">All</a>
                     {% for topic in topics %}
                     <a href="{% url 'home-page' %}?q={{topic.complaintType}}">{{topic.complaintType}}</a>
                     {% endfor %}
@@ -74,6 +75,7 @@
             <div class="recent-thread">
 
                 <a style="text-decoration: none;" href="{% url 'profile-page' message.user.username%}"> <h1>@{{message.user.name}}</h1></a>
+                <br>
                 <a style="text-decoration: none;" href="{% url 'thread-page' message.room.cid%}"><h6>{{message}}</h6></a>
                 <hr style="border: 2px;">
                 <div class = "recentdatetime">

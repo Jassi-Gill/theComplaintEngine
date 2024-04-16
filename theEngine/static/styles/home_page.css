@@ -247,9 +247,9 @@ body {
 }
 
 .recent-thread h1 {
-    color:blue;
+    color:rgb(82, 82, 82);
+    font-weight: normal;
     font-size: smaller;
-    font-weight: lighter;
 }
 
 .recent-thread h6 {
@@ -267,7 +267,7 @@ body {
     background-color: blanchedalmond;
     padding: 10px;
     border-radius: 10px;
-    color:blue; 
+    color:rgb(112, 112, 112); 
     font-size: smaller;
 }
 
