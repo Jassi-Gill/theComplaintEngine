@@ -26,6 +26,17 @@ function Thread_page() {
             </button>
 
         </div>
+        <div className="pinned-comment">
+            <button>Above</button>
+            <div className="reply">
+                <h5>replier name</h5>
+                <p>sent time</p>
+                <p>Reply</p>
+                <button>Pin</button>
+            </div>
+            <button>Unpin Comment</button>
+            <button>below</button>
+        </div>
         <div className="threadheaderbar">
             <FontAwesomeIcon icon={faArrowLeft} />
             <h3>ThreadName/ComplaintName</h3>
@@ -41,6 +52,7 @@ function Thread_page() {
                     <h5>replier name</h5>
                     <p>sent time</p>
                     <p>Reply</p>
+                    <button>Pin</button>
                 </div>
                 <div className="reply2">
                     <h5>replier name</h5>
