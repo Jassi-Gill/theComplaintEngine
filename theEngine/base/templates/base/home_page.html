@@ -72,13 +72,16 @@
             <h1>Recent Threads</h1>
             {% for message in room_messages %}
             <div class="recent-thread">
+
+                <a href="{% url 'profile-page' message.user.username%}"> <h1>@{{message.user.name}}</h1></a>
+                <a href="{% url 'thread-page' message.room.cid%}"><h6>{{message}}</h6></a>
+                <hr style="border: 2px;">
+                <div class = "recentdatetime">
+                <h5>{{message.created|timesince}}</h5>
+                </div><br>
+                <center><label class="type">{{message.room.complaintType.complaintType}}</label></center>
+
                 
-                <a href="{% url 'profile-page' message.user.username%}"><h2>{{message.user.name}}</h2></a>
-                
-                <a href="{% url 'thread-page' message.room.cid%}"><h4>{{message}}</h4></a>
-                <hr>
-                <h4>{{message.created|timesince}}</h4>
-                <label>{{message.room.complaintType.complaintType}}</label>
             </div>
             {% endfor %}
         </div>
