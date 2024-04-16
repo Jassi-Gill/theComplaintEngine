@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 {% load static %}
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,22 +13,92 @@
 <body>
     {% include 'base/navbar.html' %}
     <div class="edit-profile-box">
-        <h2>EDIT YOUR PROFILE</h2>
-        <label for="Name">Name:</label>
-        <h5>Name</h5>
-        <label for="Username">Username:</label>
-        <input type="text" value="" />
-        <label for="Email">Email</label>
-        <h5>Email</h5>
-        <label for="rollNo.">RollNO.</label>
-        <h5>RollNo</h5>
-        <label for="roomNo.">RoomNO.</label>
-        <input type="number" name="roomNo." id="" />
-        <button>Cancel</button>
-        <button>Update</button>
+        <form action="" method="POST">
+            {% csrf_token %}
+
+            <h2>EDIT YOUR PROFILE</h2>
+
+            <label for="Name">Avatar:</label>
+            {{form.avatar}}
+
+            <label for="Name">Name:</label>
+            <input type="text" value="{{user.name}}" name="name" />
+
+            <label for="Username">Username:</label>
+            <h5>{{user.username}}</h5>
+
+            <label for="Username">User Type:</label>
+            <h5>{{user.usertype}}</h5>
+
+            <label for="Email">Email:</label>
+            <input type="text" value="{{user.email}}" name="email" />
+
+            <label for="roomNo.">Room NO:</label>
+            <input type="text" value="{{user.roomno}}" name="roomno" />
+
+            <label for="roomNo.">Mess:</label>
+
+            <select name="mess" id="mess">
+                <option value="YES">YES</option>
+                <option value="NO">NO</option>
+            </select>
+
+            <label for="roomNo.">Batch:</label>
+            <select name="batch" id="batch">
+                <option value="BTech">BTech</option>
+                <option value="MTech">MTech</option>
+                <option value="Phd">Phd</option>
+            </select>
+
+            <label for="roomNo.">Year:</label>
+            <input type="text" value="{{user.year}}" name="year" />
+
+            <label for="roomNo.">Current Mobile:</label>
+            <input type="text" value="{{user.mobile}}" name="mobile" />
+
+            <br>
+            {% if messages %}
+            <ul class="messages">
+                {% for message in messages %}
+                <li>{{ message }}</li>
+                {% endfor %}
+                <h3>error</h3>
+            </ul>
+            {% endif %}
+            <a href="{% url 'home-page' %}"><button>Cancel</button></a>
+            <input type="submit" value="Update" class="subut">
+        </form>
+
     </div>
-
-
 </body>
+<script>
+    var conditionIsTrue = true; 
+
+    var selectElement = document.getElementById('mess');
+    var selectElement1 = document.getElementById('batch');
+
+    if ("{{user.mess}}" == "YES") {
+        var optionToSelect = selectElement.querySelector('option[value="YES"]');
+        optionToSelect.setAttribute("selected", "selected");
+    }
+    if ("{{user.mess}}" == "NO") {
+        var optionToSelect = selectElement.querySelector('option[value="NO"]');
+        optionToSelect.setAttribute("selected","selected");
+    }
+
+    if ("{{user.batch}}" == "BTech") {
+        var optionToSelect = selectElement1.querySelector('option[value="BTech"]');
+        optionToSelect.setAttribute("selected", "selected");
+    }
+    if ("{{user.batch}}" == "MTech") {
+        var optionToSelect = selectElement1.querySelector('option[value="MTech"]');
+        optionToSelect.setAttribute("selected","selected");
+    }
+    if ("{{user.batch}}" == "Phd") {
+        var optionToSelect = selectElement1.querySelector('option[value="Phd"]');
+        optionToSelect.setAttribute("selected", "selected");
+    }
+
+</script>
 
 </html>

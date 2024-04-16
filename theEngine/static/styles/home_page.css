@@ -176,7 +176,8 @@ body {
 
 /* Preserve the styling for Joined Threads and Recent Threads */
 .parent-Joined-Threads {
-    flex: 2;
+    font-weight: bolder;
+    
     /* Increase flex value to widen */
     margin-left: 0px;
     padding: 20px;
@@ -187,6 +188,10 @@ body {
     height: 100vh; /* Set the height of the div */
     overflow-y: scroll; /* Add vertical scrollbar */
     /* Add position relative for absolute positioning */
+}
+
+.parent-Joined-Threads h3 {
+    font-weight: bolder;  
 }
 
 .Thread {
@@ -210,6 +215,8 @@ body {
 }
 
 .parent-recent-threads {
+    font-weight: bold;
+    color: #2D2D39;
     text-align: center;
     padding: 15px;
     background-color: #e7f4f5;
@@ -223,8 +230,52 @@ body {
 .parent-recent-threads h1 {
     font-weight: bold;
     color: #2D2D39;
+    margin-bottom: 10px;
+}
+.parent-recent-threads h4 {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: lighter;
+    color: #2D2D39;
+    margin-bottom: 10px;
 }
 
-.recrent-thread {
-    background-color: #4CAF50;
+.recent-thread {
+    background-color: #dedada;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    padding: 20px;
+}
+
+.recent-thread h1 {
+    color:blue;
+    font-size: smaller;
+    font-weight: lighter;
+}
+
+.recent-thread h6 {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-style: italic;
+    background-color: #ffffff;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    padding: 10px;
+}
+
+.type {
+    
+    align-items: center;
+    background-color: blanchedalmond;
+    padding: 10px;
+    border-radius: 10px;
+    color:blue; 
+    font-size: smaller;
+}
+
+.recentdatetime {
+    font-family: sans-serif;
+    font-size: smaller;
+    align-items: center;
+    background-color: #333;
+    color:#f9f9f9;
+    border-radius: 10px;
 }

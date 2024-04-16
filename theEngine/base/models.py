@@ -9,12 +9,24 @@ class User(AbstractUser):
         ("Admin", "Admin"),
         ("Worker", "Worker"),
     )
+    CHOICES1 = (
+        ("YES", "YES"),
+        ("NO", "NO"),
+    )
+    CHOICES2 = (
+        ("BTech", "BTech"),
+        ("MTech", "MTech"),
+        ("Phd", "Phd"),
+    )
     name = models.CharField(max_length=200, null=True, blank=True)
     email = models.EmailField(unique=True, null=True, blank=True)
-    usertype = models.CharField(choices=CHOICES, max_length=200, default="Student")
-
+    usertype = models.CharField(choices=CHOICES, max_length=20, default="Student")
+    roomno = models.CharField(max_length=20, null=True, blank=True)
+    mess = models.CharField(choices=CHOICES1, max_length=20, null=True, blank=True)
     avatar = models.ImageField(null=True, default="avatar.svg")
-
+    batch = models.CharField(choices=CHOICES2, max_length=20, null=True, blank=True)
+    year = models.CharField(max_length=4, null=True, blank=True)
+    mobile = models.CharField(max_length=10, null=True, blank=True)
     REQUIRED_FIELDS = []
 
 

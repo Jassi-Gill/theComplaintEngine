@@ -6,6 +6,7 @@ urlpatterns = [
     path("logout-user", views.logoutUser, name="logout-user"),
     path("signup-page", views.signupPage, name="signup-page"),
     path("home-page/", views.homePage, name="home-page"),
+    path("thread-page/<str:pk>/", views.complaintThread, name="thread-page"),
     path("profile-page/<str:pk>/", views.profilePage, name="profile-page"),
     path("edit-profile/<str:pk>/", views.editProfile, name="edit-profile"),
     path("complaint-form/", views.complaintForm, name="complaint-form"),
