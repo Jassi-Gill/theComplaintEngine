@@ -16,35 +16,35 @@
 
     <div class="newcomplain">
         <center>
-        <a href="" class="signup">New Complaint</a>
-        <a href="" class="signup">All User Data</a>
+            <a href="{% url 'complaint-form' %}" class="signup">New Complaint</a>
+            <a href="{% url 'data-page' %}" class="signup">All User Data</a>
         </center>
     </div>
 
     <div class="container">
         <div id="side-panel" class="panel-container">
             <div class="panel-content">
-                
-                <h2>Browse Complaints by Types</h2>
+
+                <h2>Browse Complaints</h2>
                 <div class="complaints">
                     <h3>Complaint Types</h3>
-                    <ul id="complaints-list">
-                        <!-- Complaint types will be added dynamically here -->
-                    </ul>
+                    {% for topic in topics %}
+                    <a href="{% url 'home-page' %}?q={{topic.complaintType}}">{{topic.complaintType}}</a>
+                    {% endfor %}
                 </div>
                 <div class="statistics">
                     <h3>Statistics</h3>
                     <div class="statistic">
                         <h4>Total Workers:</h4>
-                        <p id="total-workers"></p>
+                        <p id="total-workers">{{wor_count}}</p>
                     </div>
                     <div class="statistic">
                         <h4>Total Students:</h4>
-                        <p id="total-students"></p>
+                        <p id="total-students">{{stu_count}}</p>
                     </div>
                     <div class="statistic">
                         <h4>Total Faculties:</h4>
-                        <p id="total-faculties"></p>
+                        <p id="total-faculties">{{fac_count}}</p>
                     </div>
                 </div>
             </div>
@@ -54,27 +54,31 @@
         </div>
         <div class="parent-Joined-Threads">
             <center>
-                <h1>Joined Threads</h1>
+                <h3>Joined Threads</h3>
             </center>
+            {% for room in rooms %}
             <div class="Thread">
-                <h2>Complaint Creator</h2><br>
+                <h2>{{room.host.name}}</h2><br>
                 <center>
-                    <h4 class="thread-name">Fan Not working</h4>
+                    <h4 class="thread-name">{{room.subject}}</h4>
                 </center>
                 <br>
-                <div class="startdate">Thread Start Date</div>
-                <div class="threadtype">Thread Type / Complaint Type</div>
+                <div class="startdate">{{room.created}}</div>
+                <div class="threadtype">{{room.complaintType.complaintType}} / {{room.cid}}</div>
             </div>
+            {% endfor %}
         </div>
         <div class="parent-recent-threads">
             <h1>Recent Threads</h1>
+            {% for message in room_messages %}
             <div class="recent-thread">
-                <h2>Thread Name</h2>
-                <h4>Latest Comment</h4>
+                <h2>{{message.user.name}}</h2>
+                <h4>{{message}}</h4>
                 <hr>
-                <h4>Latest Comment date</h4>
-                <label>xyz</label>
+                <h4>{{message.created|timesince}}</h4>
+                <label>{{message.room.complaintType.complaintType}}</label>
             </div>
+            {% endfor %}
         </div>
     </div>
     <footer class="footer">
@@ -82,6 +86,8 @@
         <div>Admin Contact</div>
     </footer>
     <script src="{% static 'js/home_page.js' %}"></script>
+    <script>
+    </script>
 </body>
 
 </html>

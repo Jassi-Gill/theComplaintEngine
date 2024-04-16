@@ -11,7 +11,37 @@ from django.http import HttpResponse
 
 @login_required(login_url="login-page")
 def homePage(request):
-    return render(request, "base/home_page.html")
+    q = request.GET.get("q") if request.GET.get("q") != None else ""
+    rooms = ComplaintRoom.objects.filter(
+        Q(complaintType__complaintType__icontains=q)
+        | Q(subject__icontains=q)
+        | Q(description__icontains=q)
+    )
+
+    topic = ComplaintType.objects.all()
+    stu_count = ComplaintRoom.objects.filter(
+        Q(host__usertype__icontains="Student")
+    ).count()
+    fac_count = ComplaintRoom.objects.filter(
+        Q(host__usertype__icontains="Faculty")
+    ).count()
+    wor_count = ComplaintRoom.objects.filter(
+        Q(host__usertype__icontains="Worker")
+    ).count()
+
+    room_messages = Message.objects.filter(
+        Q(room__complaintType__complaintType__icontains=q)
+    )
+
+    context = {
+        "rooms": rooms,
+        "topics": topic,
+        "stu_count": stu_count,
+        "fac_count": fac_count,
+        "wor_count": wor_count,
+        "room_messages": room_messages,
+    }
+    return render(request, "base/home_page.html", context)
 
 
 def profilePage(request, pk):
