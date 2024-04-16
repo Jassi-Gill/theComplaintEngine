@@ -35,6 +35,7 @@
     padding: 10px;
     margin-bottom: 15px;
     border: 1px solid #ccc;
+    color: #4e4e4e;
     border-radius: 5px;
     box-sizing: border-box;
   }
@@ -43,7 +44,7 @@
     width: 100%;
     padding: 10px;
     background-color: #007bff;
-    color: #fff;
+    color: #ffb9b9;
     border: none;
     border-radius: 5px;
     cursor: pointer;
@@ -108,7 +109,7 @@
   
   .Form input[type="text"]::placeholder,
   .Form input[type="number"]::placeholder {
-    color: #999;
+    color: #6d6d6d;
   }
   
   .Form input[type="text"]:focus,

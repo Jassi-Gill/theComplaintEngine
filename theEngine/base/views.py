@@ -36,6 +36,7 @@ def homePage(request):
     return render(request, "base/home_page.html", context)
 
 
+@login_required(login_url="login")
 def complaintThread(request, pk):
     room = ComplaintRoom.objects.get(cid=pk)
     room_messages = room.message_set.all()
@@ -56,6 +57,68 @@ def complaintThread(request, pk):
     return render(request, "base/thread_page.html", context)
 
 
+@login_required(login_url="login")
+def complaintForm(request):
+    form = ComplaintRoomForm()
+
+    if request.method == "POST":
+        c = ComplaintType.objects.get(complaintType=request.POST.get("complaintType"))
+
+        ComplaintRoom.objects.create(
+            host=request.user,
+            cid=request.POST.get("cid"),
+            subject=request.POST.get("subject"),
+            area=request.POST.get("area"),
+            complaintType=c,
+            description=request.POST.get("description"),
+            photo=request.FILES,
+        )
+        return redirect("home-page")
+
+    context = {"form": form}
+    return render(request, "base/complaint_form.html", context)
+
+
+@login_required(login_url="login")
+def updateRoom(request, pk):
+    room = ComplaintRoom.objects.get(cid=pk)
+    form = ComplaintRoomForm(instance=room)
+
+    if request.user != room.host:
+        return redirect("home-page")
+
+    if request.method == "POST":
+        form = ComplaintRoomForm(request.POST, request.FILES, instance=room)
+        c = ComplaintType.objects.get(complaintType=request.POST.get("complaintType"))
+        room.host = request.user
+        room.cid = request.POST.get("cid")
+        room.subject = request.POST.get("subject")
+        room.area = (request.POST.get("area"),)
+        room.complaintType = c
+        room.description = request.POST.get("description")
+        room.photo = request.FILES
+        room.save()
+        return redirect("home-page")
+
+    context = {"form": form, "room": room}
+    return render(request, "base/complaint_form.html", context)
+
+
+@login_required(login_url="login")
+def deletePage(request, pk):
+    room = ComplaintRoom.objects.get(cid=pk)
+
+    if request.user != room.host:
+        return redirect("home-page")
+
+    if request.method == "POST":
+        room.delete()
+        return redirect("home-page")
+
+    return render(request, "base/delete_page.html", {"obj": room})
+
+
+@login_required(login_url="login")
 def profilePage(request, pk):
     profile_user = User.objects.get(username=pk)
     rooms = ComplaintRoom.objects.filter(Q(host__username__icontains=pk))
@@ -98,10 +161,6 @@ def editProfile(request, pk):
     return render(request, "base/edit_profile.html", {"form": form, "user": user1})
 
 
-def complaintForm(request):
-    return render(request, "base/complaint_form.html")
-
-
 def loginPage(request):
     page = "login"
     if request.method == "POST":
@@ -141,6 +200,7 @@ def signupPage(request):
     return render(request, "base/signup_page.html", context)
 
 
+@login_required(login_url="login")
 def dataPage(request):
     stu = User.objects.filter(Q(usertype__icontains="Student"))
     fac = User.objects.filter(Q(usertype__icontains="Faculty"))

@@ -36,6 +36,8 @@
             <h2>{{room.subject}}</h2>
             <div class="announcement-details">
                 <h3>{{room.description}}</h3>
+                <a href="{% url 'delete-page' room.cid %}"><h3>DELETE PAGE</h3></a>
+                <!-- <a href="{% url 'update-page' room.cid %}"><h3>UPDATE PAGE</h3></a> -->
                 <div class="announcement-meta">
                     <p>{{room.created|timesince}}</p>
                     <p>HOSTED BY <a href="{% url 'profile-page' room.host.username %}" style="text-decoration: none;">@{{room.host.username}}</a></p>

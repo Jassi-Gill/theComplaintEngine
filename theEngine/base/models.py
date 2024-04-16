@@ -49,11 +49,13 @@ class ComplaintRoom(models.Model):
     complaintType = models.ForeignKey(
         ComplaintType, on_delete=models.SET_NULL, null=True
     )
-    subject = models.CharField(max_length=200)
+    subject = models.CharField(max_length=100)
     description = models.TextField(null=True, blank=True)
     participants = models.ManyToManyField(
         User, related_name="participants", blank="True"
     )
+    area = models.CharField(max_length=100, null=True)
+    photo = models.ImageField(null=True, blank=True)
     updated = models.DateTimeField(auto_now=True)
     created = models.DateTimeField(auto_now_add=True)
 
