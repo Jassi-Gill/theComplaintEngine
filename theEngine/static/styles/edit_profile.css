@@ -31,10 +31,11 @@ body {
     padding: 20px;
     border-radius: 5px;
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
-    text-align: center;
+    text-align: left;
     max-width: 500px;
     width: 100%; /* Set width to 100% */
     margin: 20px auto; /* Center horizontally */
+    box-shadow: 0px 0px 0px rgb(25, 25, 25), -10px -10px 20px rgb(125, 146, 216);
 }
 
 .edit-profile-box h2 {
