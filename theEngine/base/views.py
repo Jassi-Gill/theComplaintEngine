@@ -3,10 +3,8 @@ from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.db.models import Q
 from django.contrib.auth import authenticate, login, logout
-from django.contrib.auth.forms import UserCreationForm
 from .models import ComplaintRoom, ComplaintType, Message, User
 from .forms import ComplaintRoomForm, UserForm, MyUserCreationForm
-from django.http import HttpResponse
 
 
 @login_required(login_url="login-page")
@@ -45,11 +43,23 @@ def homePage(request):
 
 
 def profilePage(request, pk):
+
     return render(request, "base/profile_page.html")
 
 
 def editProfile(request, pk):
-    return render(request, "base/edit_profile.html")
+    user = request.user
+    form = UserForm(instance=user)
+
+    if request.method == "POST":
+        form = UserForm(request.POST, request.FILES, instance=user)
+        if form.is_valid():
+            form.save()
+            return redirect("user-profile", pk=user.username)
+        else:
+            messages.error(request, "Check Details!")
+
+    return render(request, "base/edit_profile.html", {"form": form, "user": user})
 
 
 def complaintForm(request):

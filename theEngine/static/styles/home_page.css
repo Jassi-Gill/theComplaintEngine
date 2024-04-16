@@ -210,6 +210,8 @@ body {
 }
 
 .parent-recent-threads {
+    font-weight: bold;
+    color: #2D2D39;
     text-align: center;
     padding: 15px;
     background-color: #e7f4f5;
@@ -223,8 +225,17 @@ body {
 .parent-recent-threads h1 {
     font-weight: bold;
     color: #2D2D39;
+    margin-bottom: 10px;
+}
+.parent-recent-threads h4 {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: lighter;
+    color: #2D2D39;
+    margin-bottom: 10px;
 }
 
-.recrent-thread {
-    background-color: #4CAF50;
+.recent-thread {
+    background-color: #9da99d;
+    border-radius: 5px;
+    margin-bottom: 10px;
 }

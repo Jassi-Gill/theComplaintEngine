@@ -19,4 +19,4 @@ class ComplaintRoomForm(ModelForm):
 class UserForm(ModelForm):
     class Meta:
         model = User
-        fields = ["avatar", "name", "email", "username", "usertype"]
+        fields = ["avatar", "name", "email", "roomno", "mess", "batch", "year"]
