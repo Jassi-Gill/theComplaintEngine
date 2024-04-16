@@ -58,9 +58,9 @@
             </center>
             {% for room in rooms %}
             <div class="Thread">
-                <h2>{{room.host.name}}</h2><br>
+                <a href="{% url 'profile-page' room.host.username%}"><h2>{{room.host.name}}</h2><br></a>
                 <center>
-                    <h4 class="thread-name">{{room.subject}}</h4>
+                    <a href="{% url 'thread-page' room.cid%}"><h4 class="thread-name">{{room.subject}}</h4></a>
                 </center>
                 <br>
                 <div class="startdate">{{room.created}}</div>
@@ -72,8 +72,10 @@
             <h1>Recent Threads</h1>
             {% for message in room_messages %}
             <div class="recent-thread">
-                <h2>{{message.user.name}}</h2>
-                <h4>{{message}}</h4>
+                
+                <a href="{% url 'profile-page' message.user.username%}"><h2>{{message.user.name}}</h2></a>
+                
+                <a href="{% url 'thread-page' message.room.cid%}"><h4>{{message}}</h4></a>
                 <hr>
                 <h4>{{message.created|timesince}}</h4>
                 <label>{{message.room.complaintType.complaintType}}</label>

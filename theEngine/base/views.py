@@ -42,6 +42,12 @@ def homePage(request):
     return render(request, "base/home_page.html", context)
 
 
+def complaintThread(request, pk):
+
+    context = {}
+    return render(request, "base/thread_page.html", context)
+
+
 def profilePage(request, pk):
     return render(request, "base/profile_page.html")
 
