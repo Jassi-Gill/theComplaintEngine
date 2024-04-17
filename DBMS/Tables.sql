@@ -3,7 +3,6 @@ stuId int PRIMARY KEY,
 stuName varchar(50),
 emailId varchar(80) UNIQUE,
 stuDepartment varchar(30),
-stuPass varchar(30) NOT NULL UNIQUE,
 stuGender varchar(20),
 stuBatch varchar(20),
 roomNo varchar(10));
@@ -36,8 +35,7 @@ create table Faculty(
 facId varchar(20) PRIMARY KEY,
 facName varchar(40),
 facEmail varchar(30),
-facDesig varchar(20),
-facPass varchar(20) NOT NULL UNIQUE
+facDesig varchar(20)
 );
 
 create table FacMobile(
@@ -71,7 +69,6 @@ FOREIGN KEY(facId) REFERENCES Faculty(facId));
 
 create table SuperAdmin(
 adUserName varchar(30) PRIMARY KEY,
-adPass varchar(20) NOT NULL UNIQUE,
 adName varchar(20) NOT NULL,
 adEmail varchar(30) NOT NULL,
 adLocation varchar(20));
@@ -82,7 +79,7 @@ supAdMobileNo numeric(10,0) PRIMARY KEY,
 FOREIGN KEY(adUserName) REFERENCES SuperAdmin(adUserName));
 
 create table FiledComplaint(
-tempComplainId int PRIMARY KEY,
+complainId int PRIMARY KEY,
 stuId int,
 cDesc varchar(500) NOT NULL,
 dId varchar(20),

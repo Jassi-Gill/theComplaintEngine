@@ -15,3 +15,6 @@ rows = cursor.fetchall()
 
 for row in rows:
     print(row)
+
+# ALTER USER 'username'@'localhost' IDENTIFIED WITH mysql_native_password BY 'new_password';
+# FLUSH PRIVILEGES;

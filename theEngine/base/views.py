@@ -6,6 +6,8 @@ from django.contrib.auth import authenticate, login, logout
 from .models import ComplaintRoom, ComplaintType, Message, User
 from .forms import ComplaintRoomForm, UserForm, MyUserCreationForm
 
+# from .mysql import addTable
+
 
 @login_required(login_url="login-page")
 def homePage(request):
@@ -153,7 +155,9 @@ def editProfile(request, pk):
     if request.method == "POST":
         form = UserForm(request.POST, request.FILES, instance=user1)
         if form.is_valid():
-            form.save()
+            user = form.save(commit=False)
+            # addTable(user)
+            user.save()
             return redirect("profile-page", pk)
         else:
             messages.error(request, "Check Details!")
@@ -206,7 +210,7 @@ def signupPage(request):
         if form.is_valid():
             user = form.save()
             login(request, user)
-            return redirect("home-page")
+            return redirect("edit-profile", user.username)
         else:
             messages.error(request, "An Error occured during registration!")
 
