@@ -1,5 +1,5 @@
 create table Student(
-stuId int PRIMARY KEY,
+stuId varchar(20) PRIMARY KEY,
 stuName varchar(50),
 emailId varchar(80) UNIQUE,
 stuDepartment varchar(30),
@@ -8,7 +8,7 @@ stuBatch varchar(20),
 roomNo varchar(10));
 
 create table StuMobile(
-stuId int NOT NULL,
+stuId varchar(20) NOT NULL,
 stuMobileNo numeric(10,0) PRIMARY KEY,
 FOREIGN KEY (stuId) REFERENCES Student(stuId));
 
@@ -58,7 +58,7 @@ FOREIGN KEY(workerId) REFERENCES Worker(workerId));
 create table OngoingWorksStudent(
 cId int NOT NULL,
 FOREIGN KEY(cId) REFERENCES OngoingWorks(cId),
-stuId int NOT NULL,
+stuId varchar(20) NOT NULL,
 FOREIGN KEY(stuId) REFERENCES Student(stuId));
 
 create table OngoingWorksFaculty(
@@ -80,7 +80,7 @@ FOREIGN KEY(adUserName) REFERENCES SuperAdmin(adUserName));
 
 create table FiledComplaint(
 complainId int PRIMARY KEY,
-stuId int,
+stuId varchar(20),
 cDesc varchar(500) NOT NULL,
 dId varchar(20),
 FOREIGN KEY(stuId) REFERENCES student(stuId),

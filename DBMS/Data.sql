@@ -1,53 +1,53 @@
 -- Student Table
 INSERT INTO Student (stuId, stuName, emailId, stuDepartment, stuGender, stuBatch, roomNo) 
 VALUES 
-(1, 'John Doe', 'john@example.com', 'Computer Science' , 'Male', 'Batch 1', 'C101'),
-(2, 'Jane Smith', 'jane@example.com', 'Electrical Engineering' , 'Female', 'Batch 1', 'E201'),
-(3, 'Alice Johnson', 'alice@example.com', 'Mechanical Engineering' , 'Male', 'Batch 1', 'M301'),
-(4, 'Bob Brown', 'bob@example.com', 'Computer Science' , 'Male', 'Batch 1', 'C102'),
-(5, 'Emily Davis', 'emily@example.com', 'Electrical Engineering' , 'Female', 'Batch 1', 'E202'),
-(6, 'Michael Wilson', 'michael@example.com', 'Mechanical Engineering' , 'Male', 'Batch 1', 'M302'),
-(7, 'David Jones', 'david@example.com', 'Computer Science' , 'Male', 'Batch 1', 'C103'),
-(8, 'Sarah Miller', 'sarah@example.com', 'Electrical Engineering' , 'Female', 'Batch 1', 'E203'),
-(9, 'Emma Wilson', 'emma@example.com', 'Mechanical Engineering,', 'Male', 'Batch 1', 'M303'),
-(10, 'Ryan Taylor', 'ryan@example.com', 'Computer Science' , 'Male', 'Batch 1', 'C104'), 
-(11, 'Daniel Harris', 'daniel@example.com', 'Computer Science,', 'Male', 'Batch 2', 'C105'),
-(12, 'Sophia Anderson', 'sophia@example.com', 'Electrical Engineering' , 'Female', 'Batch 2', 'E204'),
-(13, 'William Martinez', 'william@example.com', 'Mechanical Engineering' , 'Male', 'Batch 2', 'M304'),
-(14, 'Olivia Wilson', 'olivia@example.com', 'Computer Science' , 'Male', 'Batch 2', 'C106'),
-(15, 'James Taylor', 'james@example.com', 'Electrical Engineering' , 'Female', 'Batch 2', 'E205'),
-(16, 'Ethan Moore', 'ethan@example.com', 'Mechanical Engineering' , 'Male', 'Batch 2', 'M305'),
-(17, 'Ava Garcia', 'ava@example.com', 'Computer Science' , 'Male', 'Batch 2', 'C107'),
-(18, 'Mia Lopez', 'mia@example.com', 'Electrical Engineering' , 'Female', 'Batch 2', 'E206'),
-(19, 'Alexander Lee', 'alexander@example.com', 'Mechanical Engineering' , 'Male', 'Batch 2', 'M306');
+('1', 'John Doe', 'john@example.com', 'Computer Science' , 'Male', 'Batch 1', 'C101'),
+('2', 'Jane Smith', 'jane@example.com', 'Electrical Engineering' , 'Female', 'Batch 1', 'E201'),
+('3', 'Alice Johnson', 'alice@example.com', 'Mechanical Engineering' , 'Male', 'Batch 1', 'M301'),
+('4', 'Bob Brown', 'bob@example.com', 'Computer Science' , 'Male', 'Batch 1', 'C102'),
+('5', 'Emily Davis', 'emily@example.com', 'Electrical Engineering' , 'Female', 'Batch 1', 'E202'),
+('6', 'Michael Wilson', 'michael@example.com', 'Mechanical Engineering' , 'Male', 'Batch 1', 'M302'),
+('7', 'David Jones', 'david@example.com', 'Computer Science' , 'Male', 'Batch 1', 'C103'),
+('8', 'Sarah Miller', 'sarah@example.com', 'Electrical Engineering' , 'Female', 'Batch 1', 'E203'),
+('9', 'Emma Wilson', 'emma@example.com', 'Mechanical Engineering,', 'Male', 'Batch 1', 'M303'),
+('10', 'Ryan Taylor', 'ryan@example.com', 'Computer Science' , 'Male', 'Batch 1', 'C104'), 
+('11', 'Daniel Harris', 'daniel@example.com', 'Computer Science,', 'Male', 'Batch 2', 'C105'),
+('12', 'Sophia Anderson', 'sophia@example.com', 'Electrical Engineering' , 'Female', 'Batch 2', 'E204'),
+('13', 'William Martinez', 'william@example.com', 'Mechanical Engineering' , 'Male', 'Batch 2', 'M304'),
+('14', 'Olivia Wilson', 'olivia@example.com', 'Computer Science' , 'Male', 'Batch 2', 'C106'),
+('15', 'James Taylor', 'james@example.com', 'Electrical Engineering' , 'Female', 'Batch 2', 'E205'),
+('16', 'Ethan Moore', 'ethan@example.com', 'Mechanical Engineering' , 'Male', 'Batch 2', 'M305'),
+('17', 'Ava Garcia', 'ava@example.com', 'Computer Science' , 'Male', 'Batch 2', 'C107'),
+('18', 'Mia Lopez', 'mia@example.com', 'Electrical Engineering' , 'Female', 'Batch 2', 'E206'),
+('19', 'Alexander Lee', 'alexander@example.com', 'Mechanical Engineering' , 'Male', 'Batch 2', 'M306');
 
 
 
 -- StuMobile
 INSERT INTO StuMobile (stuId, stuMobileNo)
 VALUES
-(1, 8234567890),
-(2, 9876543210),
-(3, 8959565455),
-(4, 7131245781),
-(4, 8134654762),
-(5, 6245612456),
-(6, 7345613455),
-(7, 8465416515),
-(7, 9461547654),
-(8, 6645454745),
-(9, 8771687118),
-(10, 8541465414),
-(11, 9234432121),
-(12, 9876654321),
-(13, 8555775677),
-(14, 7234432109),
-(15, 6333246522),
-(16, 6333456644),
-(17, 8544165146),
-(18, 9666845688),
-(18, 8544656555),
-(19, 9777555555);
+('1', 8234567890),
+('2', 9876543210),
+('3', 8959565455),
+('4', 7131245781),
+('4', 8134654762),
+('5', 6245612456),
+('6', 7345613455),
+('7', 8465416515),
+('7', 9461547654),
+('8', 6645454745),
+('9', 8771687118),
+('10', 8541465414),
+('11', 9234432121),
+('12', 9876654321),
+('13', 8555775677),
+('14', 7234432109),
+('15', 6333246522),
+('16', 6333456644),
+('17', 8544165146),
+('18', 9666845688),
+('18', 8544656555),
+('19', 9777555555);
 
 
 -- WorkersDepartment
@@ -153,16 +153,16 @@ VALUES
 -- OngoingWorksStudent
 INSERT INTO OngoingWorksStudent (cId, stuId)
 VALUES
-(1, 1),
-(2, 2),
-(3, 3),
-(4, 4),
-(5, 5),
-(6, 6),
-(7, 7),
-(8, 8),
-(9, 9),
-(10, 10);
+(1, '1'),
+(2, '2'),
+(3, '3'),
+(4, '4'),
+(5, '5'),
+(6, '6'),
+(7, '7'),
+(8, '8'),
+(9, '9'),
+(10, '10');
 
 
 -- OngoingWorksFaculty
