@@ -146,7 +146,6 @@ def profilePage(request, pk):
 @login_required(login_url="login-page")
 def editProfile(request, pk):
     user1 = User.objects.get(username=pk)
-    print(request.user.username, " ", pk)
     if request.user.usertype != "Admin" and request.user.username != pk:
         return redirect("home-page")
 
