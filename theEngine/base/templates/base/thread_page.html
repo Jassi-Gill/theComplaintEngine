@@ -36,7 +36,9 @@
             <h2>{{room.subject}}</h2>
             <div class="announcement-details">
                 <h3>{{room.description}}</h3>
+                {% if request.user == room.host %}
                 <a href="{% url 'delete-page' room.cid %}"><h3>DELETE PAGE</h3></a>
+                {% endif %}
                 <!-- <a href="{% url 'update-page' room.cid %}"><h3>UPDATE PAGE</h3></a> -->
                 <div class="announcement-meta">
                     <p>{{room.created|timesince}}</p>
@@ -50,7 +52,7 @@
                         </div>
                         <div class="chat-content">
                             <div class="chat-header">
-                                <h4>{{message.user.username}}</h4>
+                                <h4>{{message.user.username}}({{message.username.usertype}})</h4>
                                 <p>{{message.created|timesince}}</p>
                             </div>
                             <p>{{message.body}}</p>
@@ -84,7 +86,7 @@
                     <div class="chat-avatar">
                         <img src="{{participant.avatar}}" onerror="loadAlternateImage(this)" alt="Profile Picture">
                     </div>
-                    <h4>{{participant.username}}</h4>
+                    <h4>{{participant.username}}({{participant.usertype}})</h4>
                 </div>
                 {% endfor %}
             </div>
