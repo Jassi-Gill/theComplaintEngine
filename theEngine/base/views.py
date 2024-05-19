@@ -240,3 +240,10 @@ def dataPage(request):
         "wor_count": wor_count,
     }
     return render(request, "base/data_page.html", context)
+
+
+@login_required(login_url="login")
+def lostFound(request):
+
+    context = {}
+    return render(request, "base/lost_found_form.html", context)

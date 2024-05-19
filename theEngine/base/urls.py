@@ -14,4 +14,5 @@ urlpatterns = [
     path("delete-profile/<str:pk>/", views.deleteProfile, name="delete-profile"),
     path("complaint-form/", views.complaintForm, name="complaint-form"),
     path("data-page/", views.dataPage, name="data-page"),
+    path("lost-found-form/", views.lostFound, name="lost-found-form"),
 ]
