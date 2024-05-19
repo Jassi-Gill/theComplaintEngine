@@ -5,12 +5,87 @@ body {
     background-color: #f0f0f0;
 }
 
+.switch-panel h3 {
+    margin: 20px;
+}
+
+.switch-panel {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+}
+
+/* The switch - the box around the slider */
+.switch {
+    margin: 20px;
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+/* The slider */
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+input:checked+.slider {
+    background-color: #2196F3;
+}
+
+input:focus+.slider {
+    box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked+.slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+    border-radius: 34px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
+
 .newcomplain {
     padding-top: 20px;
 }
 
 .signup {
-    width:150px;
+    width: 150px;
     padding: 10px 10px;
     background-color: rgb(87, 53, 167);
     color: rgb(254, 250, 250);
@@ -132,8 +207,10 @@ body {
     padding-bottom: 10px;
     padding-top: 10px;
     margin-bottom: 10px;
-    height: 50vh; /* Set the height of the div */
-    overflow-y: scroll; /* Add vertical scrollbar */
+    height: 50vh;
+    /* Set the height of the div */
+    overflow-y: scroll;
+    /* Add vertical scrollbar */
 }
 
 .complaints a {
@@ -177,7 +254,7 @@ body {
 /* Preserve the styling for Joined Threads and Recent Threads */
 .parent-Joined-Threads {
     font-weight: bolder;
-    
+
     /* Increase flex value to widen */
     margin-left: 0px;
     padding: 20px;
@@ -185,13 +262,15 @@ body {
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     position: relative;
-    height: 100vh; /* Set the height of the div */
-    overflow-y: scroll; /* Add vertical scrollbar */
+    height: 100vh;
+    /* Set the height of the div */
+    overflow-y: scroll;
+    /* Add vertical scrollbar */
     /* Add position relative for absolute positioning */
 }
 
 .parent-Joined-Threads h3 {
-    font-weight: bolder;  
+    font-weight: bolder;
 }
 
 .Thread {
@@ -223,8 +302,10 @@ body {
     border-radius: 10px;
     margin-bottom: 5px;
     margin-left: 10px;
-    height: 100vh; /* Set the height of the div */
-    overflow-y: scroll; /* Add vertical scrollbar */
+    height: 100vh;
+    /* Set the height of the div */
+    overflow-y: scroll;
+    /* Add vertical scrollbar */
 }
 
 .parent-recent-threads h1 {
@@ -232,6 +313,7 @@ body {
     color: #2D2D39;
     margin-bottom: 10px;
 }
+
 .parent-recent-threads h4 {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-weight: lighter;
@@ -247,7 +329,7 @@ body {
 }
 
 .recent-thread h1 {
-    color:rgb(82, 82, 82);
+    color: rgb(82, 82, 82);
     font-weight: normal;
     font-size: smaller;
 }
@@ -262,12 +344,12 @@ body {
 }
 
 .type {
-    
+
     align-items: center;
     background-color: blanchedalmond;
     padding: 10px;
     border-radius: 10px;
-    color:rgb(112, 112, 112); 
+    color: rgb(112, 112, 112);
     font-size: smaller;
 }
 
@@ -276,6 +358,6 @@ body {
     font-size: smaller;
     align-items: center;
     background-color: #333;
-    color:#f9f9f9;
+    color: #f9f9f9;
     border-radius: 10px;
 }

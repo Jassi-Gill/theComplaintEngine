@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>theEngine</title>
+     <link rel="stylesheet" href='lost_found_form.css'>
+</head>
+
+<body>
+
+
+     <div class="background-image">
+          <img src='complaint_form.jpeg' alt="Background Image">
+     </div>
+     <div class="heading">
+          <h1 style="font-size: larger; color: rgb(255, 255, 255); background-color: rgb(56, 56, 56); ">
+               New Complaint</h1>
+     </div>
+     <div id="app">
+          <form class="Form" method="POST">
+               <!-- {% csrf_token %} -->
+               <div class="small_box">
+                    <p class="form-input">Lost Found Id</p>
+                    <input type="text" placeholder="Location Lost" class="form-select" id="lost-loc">
+               </div>
+               <input type="text" placeholder="Lost Item Type" class="form-select">
+               <input type="text" name="subject" placeholder="Enter Subject" class="form-input">
+               <input type="text" name="description" placeholder="Enter a brief description" class="form-input">
+               <div id="photoInputs">
+                    <!-- Initial photo input field -->
+                    <div class="photo-input-container">
+                         <input type="text" placeholder="Enter Photo Link" class="photo-input">
+                         <button type="button" onclick="removePhotoInput(this)">Delete Photo</button>
+                    </div>
+               </div>
+               <button type="button" onclick="addPhotoInput()">ADD Photo</button>
+
+               <!-- Submit button -->
+               <input type="submit" class="btn">
+          </form>
+     </div>
+     <script>
+          function addPhotoInput() {
+               const photoInputsContainer = document.getElementById('photoInputs');
+
+               // Create a new photo input field container
+               const newPhotoInputContainer = document.createElement('div');
+               newPhotoInputContainer.classList.add('photo-input-container');
+
+               // Create a new photo input field
+               const newPhotoInput = document.createElement('input');
+               newPhotoInput.type = 'text';
+               newPhotoInput.placeholder = 'Enter Photo Link';
+               newPhotoInput.classList.add('photo-input');
+
+               // Create a new button to delete the photo input field
+               const deletePhotoButton = document.createElement('button');
+               deletePhotoButton.type = 'button';
+               deletePhotoButton.textContent = 'Delete Photo';
+               deletePhotoButton.onclick = function () {
+                    removePhotoInput(deletePhotoButton);
+               };
+
+               // Append the new photo input field and delete button to the container
+               newPhotoInputContainer.appendChild(newPhotoInput);
+               newPhotoInputContainer.appendChild(deletePhotoButton);
+
+               // Append the new photo input field container to the main container
+               photoInputsContainer.appendChild(newPhotoInputContainer);
+          }
+
+          function removePhotoInput(button) {
+               const photoInputContainer = button.parentNode;
+               photoInputContainer.remove();
+          }
+     </script>
+</body>
+
+</html>
