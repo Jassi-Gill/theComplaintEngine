@@ -13,18 +13,19 @@
 
 <body>
     {% include 'base/navbar.html' %}
-    <div class="switch-panel">
-        <h3>Lost&Found</h3>
-        <label class="switch">
-            <input type="checkbox">
-            <span class="slider round"></span>
-
-        </label>
-        <h3>Complaint</h3>
-    </div>
+    
     <div class="newcomplain">
+        <div class="switch-panel">
+            <h3>Lost & Found</h3>
+            <label class="switch">
+                <input type="checkbox">
+                <span class="slider round"></span>
+            </label>
+            <h3>Complaint</h3>
+        </div>
         <center>
             <a href="{% url 'complaint-form' %}" class="signup">New Complaint</a>
+            <a href="{% url 'lost-found-form' %}" class="signup">Lost & Found</a>
             {% if request.user.usertype == "Admin" %}
             <a href="{% url 'data-page' %}" class="signup">All User Data</a>
             {% endif %}
@@ -38,7 +39,7 @@
 
                 <h2>Browse Complaints</h2>
                 <div class="complaints">
-                    <h3>Complaint Types</h3>
+                    <h3 style="color: blanchedalmond;">COMPLAINT TYPES</h3>
                     <a href="{% url 'home-page' %}">All</a>
                     {% for topic in topics %}
                     <a href="{% url 'home-page' %}?q={{topic.complaintType}}">{{topic.complaintType}}</a>
